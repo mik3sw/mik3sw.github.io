@@ -29,8 +29,8 @@ description:           >
 
 # A shorter description for the sidebar.
 tagline:               >
-  "Best Jekyll Theme by a Mile".
-  Open `_config.yml` to edit this text.
+  "Student and Developer".
+  **Check my social profiles**.
 
 # A list of keywords for your blog
 keywords:              [developer, instagram, social, telegram, music]
@@ -79,7 +79,7 @@ paginate_path:         /page-:num/
 # ========================================================================================
 
 # Sidebar image and theme color of the site.
-accent_image:          /assets/img/sidebar-bg.jpg
+accent_image:          /assets/img/wallpaper.jpg
 accent_color:          rgb(79,177,186)
 
 # This is used for the `theme-color` meta tag,
