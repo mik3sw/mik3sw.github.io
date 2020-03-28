@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: list
 title: Instagram Filters
 description: >
   My instagram filters + downloads.
