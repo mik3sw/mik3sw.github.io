@@ -10,11 +10,7 @@ noindex: true
 Here my Instagram filters with project files download
 
 
-## Message boxes
-**NOTE**: You can add a message box.
-{:.message}
-
-## Which Pokemon are you
+## Which Pokemon are you ?
 - [Preview](https://instagram.com/a/r/?effect_id=219579482427319)
 - [Download]()
 {:.lead}
