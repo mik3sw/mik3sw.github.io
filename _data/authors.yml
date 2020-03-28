@@ -26,8 +26,8 @@ author1:
   # Social media icons in sidebar.
   # Comment/uncommet to show/hide. Rearrange to change the order in which they appear.
   social:
-    twitter:         jekyllrb
-    github:          qwtel/hydejack
+    twitter:         metanfetamike
+    github:          mik3sw
     # download:        <url>
     # email:           <mail@domain.tld>
     # rss:             https://<url>/feed.xml
@@ -40,7 +40,7 @@ author1:
     # spotify:         <user>/<number>
     # soundcloud:      <username>
     # lastfm:          <username>
-    # instagram:       <username>
+    instagram:       metanfetamike
     # flickr:          <string@string>
     # 500px:           <username>
     # dribbble:        <username>
