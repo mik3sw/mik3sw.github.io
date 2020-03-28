@@ -16,7 +16,7 @@ baseurl:               ''
 
 # Language of your content in 2-letter code, e.g.: en, de.
 # You may also provide a location, e.g.: en-us, de_AT.
-lang:                  en
+lang:                  it
 
 # The title of your blog. Used in the sidebar and the browser tab.
 title:                 Mike
@@ -49,12 +49,12 @@ author:
 
 # Add links to the sidebar.
 menu:
-  - title:             Example
+  - title:             Softwares
     url:               /example/
-  - title:             Documentation
-    url:               https://hydejack.com/docs/
-  - title:             About
-    url:               /about/
+  - title:             Instagram filters
+    url:               /igfilters/
+  - title:             Games
+    url:               /games/
 
 # Add links to the footer.
 # Typically you'll want to link to your cookie- or privacy policy (if appliable), etc..
@@ -285,8 +285,8 @@ remote_theme: qwtel/hydejack@v8.5.1
 #   yandex:              <verification-id>
 
 # Used for Twitter cards
-# twitter:
-#   username:            <shortname>
+twitter:
+   username:            metanfetamike
 
 # Used for Facebook open graph
 # facebook:
@@ -295,11 +295,12 @@ remote_theme: qwtel/hydejack@v8.5.1
 #   admins:              <id>
 
 # Used on index and about sites
-# social:
-#   name:                <firstname> <lastname>
-#   links:
-#     - https://twitter.com/<username>
-#     - https://github.com/<username>
+ social:
+   name:                <firstname> <lastname>
+   links:
+     - https://twitter.com/metanfetamike
+     - https://github.com/mik3sw
+     - https://instagram.com/metanfetamike
 
 
 # Other Plugins
