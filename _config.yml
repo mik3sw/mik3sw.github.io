@@ -285,8 +285,8 @@ remote_theme: qwtel/hydejack@v8.5.1
 #   yandex:              <verification-id>
 
 # Used for Twitter cards
-twitter:
-   username:            metanfetamike
+# twitter:
+#   username:            metanfetamike
 
 # Used for Facebook open graph
 # facebook:
@@ -295,12 +295,12 @@ twitter:
 #   admins:              <id>
 
 # Used on index and about sites
- social:
-   name:                <firstname> <lastname>
-   links:
-     - https://twitter.com/metanfetamike
-     - https://github.com/mik3sw
-     - https://instagram.com/metanfetamike
+# social:
+#   name:                <firstname> <lastname>
+#   links:
+#     - https://twitter.com/metanfetamike
+#     - https://github.com/mik3sw
+#     - https://instagram.com/metanfetamike
 
 
 # Other Plugins
