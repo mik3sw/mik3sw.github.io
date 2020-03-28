@@ -52,7 +52,7 @@ menu:
   - title:             Softwares
     url:               /example/
   - title:             Instagram filters
-    url:               /igfilters/
+    url:               /igfilters/_posts/instagram_filters.md
   - title:             Games
     url:               /games/
 
