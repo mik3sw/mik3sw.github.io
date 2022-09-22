@@ -25,7 +25,7 @@ document.getElementById('dark_toggle_2').addEventListener('click', () => {
 const typedTextSpan = document.querySelector(".typed-text");
 const cursorSpan = document.querySelector(".cursor");
 
-const textArray = ["Junior Developer", "Freelancer", "Open sourcerer", "Linux user"];
+const textArray = ["Developer", "Freelancer", "Open sourcerer", "Linux user"];
 const colorArray = ["#3a8bc9", "#e09a43", "#ff4b19", "#4ca33b"]
 const typingDelay = 50;
 const erasingDelay = 50;
@@ -73,7 +73,7 @@ function erase() {
 //document.addEventListener("DOMContentLoaded", function() { // On DOM Load initiate the effect
 //  if(textArray.length) setTimeout(type, newTextDelay + 250);
 //});
-textArray1 = ["Junior Developer"];
+textArray1 = ["Developer"];
 charIndex1 = 0
 function type_start() {
     if (charIndex1 < textArray1[textArrayIndex].length) {
