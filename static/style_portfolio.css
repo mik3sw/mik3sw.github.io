@@ -605,7 +605,35 @@ hr.rounded {
 }    
 
 
+.image {
+  flex-basis: 40%
+}
 
+.imghover{
+  border-radius: 50%; 
+  width:90%; 
+  border: 5px solid; 
+  vertical-align: middle;
+  transition: all 0.5s;
+}
+
+.imghover:hover{
+  border: 15px solid;
+}
+
+.imgphone{
+  border-radius: 50%; 
+  width:40%; 
+  border: 10px solid; 
+  transition: all 0.5s;
+  display: none;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.imagephone{
+  display: flex;
+}
   
 
   @media screen and (max-width: 1000px) {
@@ -673,5 +701,14 @@ hr.rounded {
     .card__title {
       font-size: 4vw;
       color: white;
+    }
+    .card__status {
+      font-size: 4vw;
+    }
+    .image{
+      display: none;
+    }
+    .imgphone{
+      display: block
     }
   }
