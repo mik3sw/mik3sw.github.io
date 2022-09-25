@@ -63,9 +63,13 @@
     margin: auto;
     font-size:2vw;
   }
+  .container{
+    margin-left:100px;
+    margin-right:100px;
+  }
 
   .container p {
-    font-size: 3rem;
+    font-size: 2rem;
     padding: 0.5rem;
     font-weight: bold;
     letter-spacing: 0.1rem;
@@ -634,6 +638,117 @@ hr.rounded {
 .imagephone{
   display: flex;
 }
+
+/* CSS */
+.button-35-dark {
+  align-items: center;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: transparent 0 0 0 3px,rgba(18, 18, 18, .1) 0 6px 20px;
+  box-sizing: border-box;
+  color: #121212;
+  cursor: pointer;
+  display: inline-flex;
+  flex: 1 1 auto;
+  font-size: 2rem;
+  font-weight: 700;
+  justify-content: center;
+  line-height: 1;
+  margin: 0;
+  outline: none;
+  padding: 1.5rem 1.7rem;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow .5s,-webkit-box-shadow .5s;
+  transition: all 0.5s;
+  white-space: nowrap;
+  border: 0;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-35-dark:hover {
+  /*box-shadow: linear-gradient(160deg, rgba(30,230,24,1) 0%, rgba(18,224,158,1) 38%, rgba(0,179,255,1) 79%);*/
+  /*box-shadow: #909090 0 0 0 3px, transparent 0 0 0 0;*/
+  background-color: #121212;
+  color: #fff
+}
+.button-35-light:hover {
+  /*box-shadow: */
+  background-color: #fff;
+  color:#121212;
+  
+}
+
+.button-35-light {
+  align-items: center;
+  background-color: #121212;
+  border-radius: 12px;
+  box-shadow: transparent 0 0 0 3px,rgba(18, 18, 18, .1) 0 6px 20px;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  flex: 1 1 auto;
+  font-size: 2rem;
+  font-weight: 700;
+  justify-content: center;
+  line-height: 1;
+  margin: 0;
+  outline: none;
+  padding: 1.5rem 1.7rem;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow .5s,-webkit-box-shadow .5s;
+  transition: all 0.5s;
+  white-space: nowrap;
+  border: 0;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+
+
+/* CSS */
+.button-33 {
+  background-color: #c2fbd7;
+  border-radius: 100px;
+  box-shadow: rgba(44, 187, 99, .2) 0 -25px 18px -14px inset,rgba(44, 187, 99, .15) 0 1px 2px,rgba(44, 187, 99, .15) 0 2px 4px,rgba(44, 187, 99, .15) 0 4px 8px,rgba(44, 187, 99, .15) 0 8px 16px,rgba(44, 187, 99, .15) 0 16px 32px;
+  color: rgb(0, 90, 0);
+  cursor: pointer;
+  display: inline-block;
+  font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
+  padding: 7px 20px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 250ms;
+  border: 0;
+  font-size: 20px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  margin-right: 30px;
+}
+
+.button-33:hover {
+  box-shadow: rgba(44,187,99,.35) 0 -25px 18px -14px inset,rgba(44,187,99,.25) 0 1px 2px,rgba(44,187,99,.25) 0 2px 4px,rgba(44,187,99,.25) 0 4px 8px,rgba(44,187,99,.25) 0 8px 16px,rgba(44,187,99,.25) 0 16px 32px;
+  transform: scale(1.05);
+}
+
+
+.newcard{
+  width:50%;
+}
+.cardtitle{
+  margin:5%; 
+  text-align:center; 
+  font-size: 50px;
+}
+.cardtext{
+  font-size: 25px;
+}
   
 
   @media screen and (max-width: 1000px) {
@@ -646,6 +761,10 @@ hr.rounded {
     }
     .btn{
       font-size: 5vw;
+    }
+    .button-33 {
+      font-size: 5vw;
+      padding: 20px;
     }
 
     .section-title{
@@ -710,5 +829,31 @@ hr.rounded {
     }
     .imgphone{
       display: block
+    }
+    .button-35-dark {
+      border-radius: 20px;
+      font-size: 5vw;
+      padding: 2rem 3rem;
+    }
+    .button-35-light {
+      border-radius: 20px;
+      font-size: 5vw;
+      padding: 2rem 3rem;
+    }
+    .container{
+      margin-left:0px;
+      margin-right:0px;
+    }
+    .container p{
+      font-size: 3rem;
+    }
+    .newcard{
+      width:100%;
+    }
+    .cardtitle{
+      font-size: 9vw;
+    }
+    .cardtext{
+      font-size: 6vw
     }
   }

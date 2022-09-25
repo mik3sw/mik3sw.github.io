@@ -10,6 +10,8 @@ document.getElementById('dark_toggle_1').addEventListener('click', () => {
     document.body.classList.toggle('night-mode')
     document.getElementById("dark_toggle_1").style.display = "none";
     document.getElementById("dark_toggle_2").style.display = "flex";
+    document.getElementById("btn35").classList.add('button-35-dark');
+    document.getElementById("btn35").classList.remove('button-35-light');
 
 });
 
@@ -18,6 +20,9 @@ document.getElementById('dark_toggle_2').addEventListener('click', () => {
     document.body.classList.toggle('night-mode')
     document.getElementById("dark_toggle_2").style.display = "none";
     document.getElementById("dark_toggle_1").style.display = "flex";
+    document.getElementById("btn35").classList.add('button-35-light');
+    document.getElementById("btn35").classList.remove('button-35-dark');
+
 
 });
 
