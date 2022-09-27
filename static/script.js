@@ -1,6 +1,9 @@
 //document.querySelector('.tumbler__wrapper').addEventListener('click', _ => document.body.classList.toggle('night-mode'));
 AOS.init();
 
+
+
+
 document.body.classList.toggle('night-mode')
 document.getElementById("dark_toggle_1").style.display = "none";
 document.getElementById("dark_toggle_2").style.display = "flex";

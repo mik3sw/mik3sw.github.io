@@ -11,7 +11,7 @@
     color: #222;
     background-color: whitesmoke;
     font-family: "Montserrat", sans-serif;
-    transition: background-color 0.5s, color 0.5s;
+    transition: background-image 1.5s, color 1s;
     margin: 0;
     padding: 0;
     background-repeat: no-repeat; /* Do not repeat the image */
@@ -19,9 +19,14 @@
     background-image: url("light2.png");
   }
   body.night-mode {
+    
+    animation: fade;
     background-color: rgb(0, 0, 0);
     color: #d9d9d9;
     background-image: url("dark5.png");
+    
+    transition: background-image 1.5s, color 1s;
+    
   }
   
   .header {
@@ -32,11 +37,11 @@
     align-items: center;
     flex-direction: column;
     margin: auto;
-    font-size:3vw;
+    font-size:2vw;
     
   }
   .section {
-    width: 90%;
+    width: 80%;
     max-width: 90%;
     display: flex;
     flex-direction: column;
@@ -51,7 +56,7 @@
     flex-direction: column;
     padding: 1rem;
     margin: auto;
-    font-size:3vw;
+    font-size:2vw;
   }
 
   .topnav {
@@ -69,7 +74,7 @@
   }
 
   .container p {
-    font-size: 2rem;
+    font-size: 2vw;
     padding: 0.5rem;
     font-weight: bold;
     letter-spacing: 0.1rem;
@@ -277,13 +282,13 @@
 
   .card-title{
     padding-left: 10px;
-    font-size:4vw;
+    font-size:3vw;
     font-weight: bold;
     width: 100%;
   }
   .card-subtitle{
     padding-left: 10px;
-    font-size:2vw;
+    font-size:1.5vw;
     font-weight:lighter;
     color: gray;
   }
@@ -499,7 +504,7 @@ hr.rounded {
 }
 
 .cit {
-  font-size:5vw;
+  font-size:4vw;
   font-weight: bold;
   display: block;
 }
@@ -614,8 +619,8 @@ hr.rounded {
 }
 
 .imghover{
-  border-radius: 50%; 
-  width:90%; 
+  border-radius: 50px; 
+  width:70%; 
   border: 5px solid; 
   vertical-align: middle;
   transition: all 0.5s;
@@ -626,8 +631,8 @@ hr.rounded {
 }
 
 .imgphone{
-  border-radius: 50%; 
-  width:40%; 
+  border-radius: 50px; 
+  width: 30%; 
   border: 10px solid; 
   transition: all 0.5s;
   display: none;
@@ -637,6 +642,7 @@ hr.rounded {
 
 .imagephone{
   display: flex;
+  
 }
 
 /* CSS */
@@ -730,6 +736,8 @@ hr.rounded {
   -webkit-user-select: none;
   touch-action: manipulation;
   margin-right: 30px;
+  box-shadow: rgba(44,187,99,.35) 0 -25px 18px -14px inset,rgba(44,187,99,.25) 0 1px 2px,rgba(44,187,99,.25) 0 2px 4px,rgba(44,187,99,.25) 0 4px 8px,rgba(44,187,99,.25) 0 8px 16px,rgba(44,187,99,.25) 0 16px 32px;
+
 }
 
 .button-33:hover {
@@ -739,25 +747,27 @@ hr.rounded {
 
 
 .newcard{
-  width:50%;
+  width:40%;
 }
 .cardtitle{
   margin:5%; 
   text-align:center; 
-  font-size: 50px;
+  font-size: 3vw;
 }
 .cardtext{
-  font-size: 25px;
+  font-size: 1.5vw;
 }
-  
+.arrowdown {
+  display: none;
+}
 
   @media screen and (max-width: 1000px) {
     .header{
-      font-size: 5vw;
+      font-size: 4vw;
     }
 
     .topnav{
-      font-size: 7vw;
+      font-size: 5vw;
     }
     .btn{
       font-size: 5vw;
@@ -772,14 +782,14 @@ hr.rounded {
     }
 
     .cit {
-      font-size:10vw;
+      font-size:8vw;
     }
 
     .card-title{
-      font-size: 10vw;
+      font-size: 8vw;
     }
     .card-subtitle{
-      font-size: 5vw;
+      font-size: 4vw;
     }
 
     .card-icon{
@@ -813,9 +823,9 @@ hr.rounded {
       font-size: 70px;
     }
     .section-about {
-      font-size: 6vw;
-      width: 93%;
-      max-width: 93%;
+      font-size: 5vw;
+      width: 90%;
+      max-width: 90%;
     }
     .card__title {
       font-size: 4vw;
@@ -845,15 +855,20 @@ hr.rounded {
       margin-right:0px;
     }
     .container p{
-      font-size: 3rem;
+      font-size: 5vw;
     }
+    
+
     .newcard{
-      width:100%;
+      width:70%;
     }
     .cardtitle{
-      font-size: 9vw;
+      font-size: 7vw;
     }
     .cardtext{
-      font-size: 6vw
+      font-size: 4vw
+    }
+    .arrowdown{
+      display: block;
     }
   }
