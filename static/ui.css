@@ -1,0 +1,96 @@
+:root{
+    --primary: #7076fe;
+    --secondary: #4b556b;
+    --third: #717a8d;
+    --fourth: #948eff;
+    --bg-dark: black;
+    --bg-light: #f9f9f9;
+}
+
+body{
+    background-color: var(--bg);
+    width: 70%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.container-test{
+    width: 30%;
+    display: flex;
+    margin-top: 10%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.button-primary{
+    background-color: var(--primary);
+    border: 5px solid var(--primary);
+    align-items: center;
+    border-radius: 20px;
+    /*box-shadow: transparent 0 0 0 3px,rgba(18, 18, 18, .1) 0 6px 20px;*/
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 10px 25px 0 rgba(0, 0, 0, 0.19);
+    box-sizing: border-box;
+    color: white;
+    cursor: pointer;
+    display: inline-flex;
+    flex: 1 1 auto;
+    font-size: 1.5rem;
+    font-weight: 700;
+    justify-content: center;
+    line-height: 1;
+    margin: 0;
+    outline: none;
+    padding: 1rem 1rem;
+    text-align: center;
+    text-decoration: none;
+    transition: box-shadow .5s,-webkit-box-shadow .5s, border .5s;
+    transition: all 0.5s;
+    white-space: nowrap;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.button-primary:hover{
+    background-color: var(--primary);
+    color: #fff;
+    border: 5px solid var(--primary); 
+    box-shadow: 0 4px 8px 0 var(--fourth), 0 6px 20px 0 var(--fourth);
+}
+
+.button-secondary{
+    background-color: var(--secondary);
+    border: 5px solid var(--secondary);
+    align-items: center;
+    border-radius: 20px;
+    /*box-shadow: transparent 0 0 0 3px,rgba(18, 18, 18, .1) 0 6px 20px;*/
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-sizing: border-box;
+    color: white;
+    cursor: pointer;
+    display: inline-flex;
+    flex: 1 1 auto;
+    font-size: 1.5rem;
+    font-weight: 700;
+    justify-content: center;
+    line-height: 1;
+    margin: 0;
+    outline: none;
+    padding: 1rem 1rem;
+    text-align: center;
+    text-decoration: none;
+    transition: box-shadow .5s,-webkit-box-shadow .5s;
+    transition: all 0.5s;
+    white-space: nowrap;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.button-secondary:hover{
+    color: #fff; 
+    box-shadow: 0 4px 8px 0 var(--third), 0 6px 20px 0 var(--third);
+}

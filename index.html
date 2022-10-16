@@ -5,21 +5,25 @@
         <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Montserrat:400,700'>
         <script defer src="https://use.fontawesome.com/releases/v6.0.0/js/all.js"></script>
         <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-        
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> 
     </head>
     <body>
         <div class="container-1" >
             <div class="topnav">
                 
-                <div style="width:95%; margin: auto 0;">
+                <div style="width:100%; margin: auto 0;">
                     <a href="https://www.linkedin.com/in/michele-angelo-m-495462159/">
                         <!--<button class="btn" ><bold>⦿</bold> Available for hire</button>-->
                         
                         <button class="button-33" role="button">Available for hire</button>
                     </a>
                 </div>
-                <div style="width:5%">
+                
+                <div style="width:5%; display: block;">
+                    <h3><i class="fa-solid fa-m"></i></h3>
+                </div>
+                <!--MESSO NASCOSTO-->
+                <div style="width:5%; display: none;">
                     <div id="dark_toggle_1">
                         <h2 ><i class="fa-regular fa-moon"></i></h2>
                     </div>
@@ -46,6 +50,7 @@
 
             <div class="imagephone">
                 <img src="static/avatar.jpg" alt="Avatar" class="imgphone" > 
+                
             </div>
 
             
@@ -53,8 +58,11 @@
             <section id="about" class="section-about">
                 
                 <div style="display: flex; align-items: center;justify-content: center">
-                    <div class="image">
-                        <img src="static/avatar.jpg" alt="Avatar"  class="imghover"> 
+                    <div class="image item">
+                        <span class="notify-badge">🚀</span>
+                        <img src="static/avatar.jpg" alt="Avatar"  class="imghover">
+                        
+                        
                     </div>
                     <div class="text">
                         <br>
@@ -74,9 +82,7 @@
                     
                 </div>
 
-                <div class="arrowdown" style="margin-left: auto; margin-right: auto; padding-top: 10%;">
-                    <i class="fa-solid fa-arrow-down"></i>
-                </div>
+                
                 <!--
                 <div style="display: block; margin-left: auto; margin-right: auto; text-align: center; padding:20px;">
                     <a style="margin:15px;">
@@ -103,47 +109,56 @@
                 </p>
                 <hr class="rounded">
                 -->
-
-                <div style="display:flex; padding-top: 15%;">
-                    <div style="margin-right:5%">
-                        <i class="fa-solid fa-building-columns"></i>
+                <div style="margin-top: 20%;" data-aos="fade-up">
+                    <div class="section-title">
+                        <a class="effect-underline">.About</a>
                     </div>
-                    <div>
-                        University Milano Bicocca (2019 - 2022)
+                    <div class="list-card" style="margin-top: 10%;" >
+                    
+                        <div style="display:flex; padding-top: 3%;">
+                            <div style="margin-right:5%">
+                                <i class="fa-solid fa-building-columns"></i>
+                            </div>
+                            <div>
+                                University Milano Bicocca (2019 - 2022)
+                            </div>
+                        </div>
+                        <div style="display:flex; margin-top:3%">
+                            <div style="margin-right:5%">
+                                <i class="fa-solid fa-graduation-cap"></i> 
+                            </div>
+                            <div>
+                                IT master's degree (2022 - 2024)
+                            </div>
+                        </div>
+                        <div style="display:flex; margin-top:3%">
+                            <div style="margin-right:5%">
+                                <i class="fa-solid fa-microchip"></i> 
+                            </div>
+                            <div>
+                                Backend Developer
+                            </div>
+                        </div>
+                        <div style="display:flex; margin-top:3%">
+                            <div style="margin-right:5%">
+                                <i class="fa-solid fa-rocket"></i> 
+                            </div>
+                            <div>
+                                Working on ML projects
+                            </div>
+                        </div>
+                        <div style="display:flex; margin-top:3%">
+                            <div style="margin-right:5%">
+                                <i class="fa-solid fa-book"></i>
+                            </div>
+                            <div>
+                                Download my thesis (Non-Photorealistic Rendering) <a href="" style="color:gray">here</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div style="display:flex; margin-top:3%">
-                    <div style="margin-right:5%">
-                        <i class="fa-solid fa-graduation-cap"></i> 
-                    </div>
-                    <div>
-                        IT master's degree (2022 - 2024)
-                    </div>
-                </div>
-                <div style="display:flex; margin-top:3%">
-                    <div style="margin-right:5%">
-                        <i class="fa-solid fa-microchip"></i> 
-                    </div>
-                    <div>
-                        Backend Developer
-                    </div>
-                </div>
-                <div style="display:flex; margin-top:3%">
-                    <div style="margin-right:5%">
-                        <i class="fa-solid fa-rocket"></i> 
-                    </div>
-                    <div>
-                        Working on ML projects
-                    </div>
-                </div>
-                <div style="display:flex; margin-top:3%">
-                    <div style="margin-right:5%">
-                        <i class="fa-solid fa-book"></i>
-                    </div>
-                    <div>
-                        Download my thesis (Non-Photorealistic Rendering) <a href="" style="color:gray">here</a>
-                    </div>
-                </div>
+                
+                
                 
                 <!--
                 <p style="font-weight:lighter; text-align: left;">
@@ -167,7 +182,7 @@
                 
                 
 
-                <p class="cit" style="font-weight:bolder; text-align: center; margin-top:150px;">
+                <p class="cit" style="font-weight:bolder; text-align: center; margin-top:150px; display:none">
                     <br><br>
                     
                     <a data-aos="zoom-out" class="cit">
@@ -365,7 +380,76 @@
                   </ul>
             </section>
             -->
-            <div class="container" style="display:block; margin:50px;">
+            <div class="works">
+                <div class="cardwork" data-aos="fade-up">
+                    <div class="cardimage">
+                        <img class="cardimg" src="https://github.com/mik3sw/OneClick/raw/main/imgs/customTogglesExample.png" width="100%">
+                    </div>
+                    <div class="cardtitle">
+                        <b>OneClick</b>
+                    </div>
+                    <div class="cardtext">
+                        <div style="margin:5%;">
+                            macOS Utility menubar app 🚀
+                            Written in Swift and SwiftUI for macOS Monterey and Apple Silicon
+                        </div>
+                    </div>
+                    <div class="cardbtn">
+                        <a href="https://github.com/mik3sw/OneClick">
+                            <button class="button-35-dark" style="width:100%">GitHub</button>
+                        </a>
+                    </div>
+                    
+                </div>
+
+                <div class="cardwork" data-aos="fade-up">
+                    <div class="cardimage">
+                        <img class="cardimg" src="https://github.com/mik3sw/SkinDetection/raw/main/docs/info.png" width="100%">
+                    </div>
+                    <div class="cardtitle">
+                        <b>Skin Detection</b>
+                    </div>
+                    <div class="cardtext">
+                        <div style="margin:5%;">
+                            Human Skin Detection using OpenCV and a classifier.
+                            Written in Python for Windows, macOS and Linux.
+                        </div>
+                    </div>
+                    <div class="cardbtn">
+                        <a href="https://github.com/mik3sw/SkinDetection">
+                            <button class="button-35-dark" style="width:100%">GitHub</button>
+                        </a>
+                    </div>
+                    
+                </div>
+
+                <div class="cardwork" data-aos="fade-up">
+                    <div class="cardimage">
+                        <img class="cardimg" src="https://github.com/mik3sw/GoogleAssistantBot/raw/master/QDyD.gif" width="100%">
+                    </div>
+                    <div class="cardtitle">
+                        <b>Telegram Bots</b>
+                    </div>
+                    <div class="cardtext">
+                        <div style="margin:5%;">
+                            Telegram bots for group management and chatbot.
+                            Written in python using python-telegram-bot API.
+                        </div>
+                    </div>
+                    <div class="cardbtn">
+                        <a href="https://github.com/mik3sw/GoogleAssistantBot">
+                            <button class="button-35-dark" style="width:100%">GitHub</button>
+                        </a>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="container" style="display:none;">
+
+                
+                
+
                 <div class="newcard" data-aos="fade-right" style="margin: 5% auto; padding:5%; background-color:whitesmoke; color:rgb(24, 24, 24); border-radius:30px; box-shadow: rgba(243, 155, 211, 0.4) -5px 5px, rgba(240, 46, 170, 0.4) -10px 10px, rgba(240, 46, 170, 0.3) -15px 15px, rgba(240, 46, 170, 0.2) -20px 20px, rgba(240, 46, 170, 0.1) -25px 25px, rgba(240, 46, 170, 0.05) -30px 30px; " >
                     <!--
                     <div class="cardimg">
