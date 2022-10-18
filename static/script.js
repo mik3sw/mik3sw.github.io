@@ -4,9 +4,9 @@ AOS.init();
 
 
 
-document.body.classList.toggle('night-mode')
-document.getElementById("dark_toggle_1").style.display = "none";
-document.getElementById("dark_toggle_2").style.display = "flex";
+//document.body.classList.toggle('night-mode')
+//document.getElementById("dark_toggle_1").style.display = "none";
+//document.getElementById("dark_toggle_2").style.display = "flex";
 
 
 document.getElementById('dark_toggle_1').addEventListener('click', () => {
