@@ -1,0 +1,140 @@
+@media screen and (max-width: 1000px) {
+    .header{
+      font-size: 4vw;
+    }
+
+    .topnav{
+      font-size: 5vw;
+    }
+    .btn{
+      font-size: 5vw;
+    }
+    .button-33 {
+      font-size: 5vw;
+      padding: 20px 40px;
+    }
+
+    .section-title{
+      font-size: 15vw;
+    }
+
+    .cit {
+      font-size:8vw;
+    }
+
+    .card-title{
+      font-size: 8vw;
+    }
+    .card-subtitle{
+      font-size: 4vw;
+    }
+
+    .card-icon{
+      font-size: 10vw;
+    }
+    .card-number-1{
+      font-size: 10vw;
+    }
+    .card-number-2{
+      font-size: 10vw;
+    }
+    .card-number-3{
+      font-size: 10vw;
+    }
+    .card-number-4{
+      font-size: 10vw;
+    }
+    .card-number-5{
+      font-size: 10vw;
+    }
+    .card-number-6{
+      font-size: 10vw;
+    }
+    .card-number-7{
+      font-size: 10vw;
+    }
+
+    .wrapper .icon {
+      width: 200px;
+      height: 200px;
+      font-size: 70px;
+    }
+    .section-about {
+      font-size: 5vw;
+      width: 90%;
+      max-width: 90%;
+    }
+    .card__title {
+      font-size: 4vw;
+      color: white;
+    }
+    .card__status {
+      font-size: 4vw;
+    }
+    .image{
+      display: none;
+    }
+    .imgphone{
+      display: block
+    }
+    .button-35-dark {
+      font-size: 5vw;
+      padding: 2rem 3rem;
+    }
+    .button-35-light {
+      border-radius: 40px;
+      font-size: 5vw;
+      padding: 2rem 3rem;
+    }
+    .container{
+      margin-left:0px;
+      margin-right:0px;
+    }
+    .container p{
+      font-size: 5vw;
+    }
+    
+
+    .newcard{
+      width:70%;
+    }
+    .cardtitle{
+      font-size: 7vw;
+    }
+    .cardtext{
+      font-size: 4vw
+    }
+    .arrowdown{
+      display: block;
+    }
+    .cardwork{
+      width:70%;
+      border-radius:40px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .cardimg{
+      border-radius: 30px;
+    }
+
+    .works{
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 100%;
+    }
+
+    header{
+      display: none;
+    }
+    .container-1{
+      display: block;
+    }
+    .section-skills{
+      width: 100%;
+    }
+
+    .circle{
+      display: none;
+    }
+}

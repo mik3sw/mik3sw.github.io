@@ -1,27 +1,79 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="static/style_portfolio.css">
+        <title>
+            Michele Marcucci - Developer portfolio
+        </title>
+        <meta name="description" content="Developer portfolio, skills and works">
+        <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap'>
         <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Montserrat:400,700'>
+        <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet"> 
         <script defer src="https://use.fontawesome.com/releases/v6.0.0/js/all.js"></script>
+        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" href="assets/css/mobile.css">
         <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
         <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> 
     </head>
-    <body>
+    <body style="background-image: url('assets/images/dark5.webp');">
+        <div class="circle" id="circle"></div>
+        <header id="header">
+            <div class="container-nav" id="navbar">
+                <div class="navbar">
+                    <h2 class="title-logo" style="margin-top: 30px;" >
+                        Michele Marcucci
+                        <!--<span class="fa-stack fa-2x">
+                            <i class="fa-solid fa-m logo" id="logo1"></i>
+                            <i class="fa-solid fa-m logo rotate180" id="logo2" style="margin-left: 1%"></i>
+                        </span>-->
+                    </h2>
+                    
+                    <nav>
+                        <ul>
+                            <li>
+                                <div style="display:flex">
+                                    <div class="container-button nav-right" style="height:46px">
+                                        <div class="bar bar-grey">
+                                            <div class="option"><h3>About</h3></div>
+                                            <div class="option"><h3>Skills</h3></div>
+                                            <div class="option"><h3>Works</h3></div>
+                                        </div>
+                                        <div class="bar-outer 2 right">
+                                            <div class="bar bar-purple" id="colorbar1">
+                                                <div class="option"><h3>About</h3></div>
+                                                <div class="option"><h3>Skills</h3></div>
+                                                <div class="option"><h3>Works</h3></div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    
+                                </div>
+                                
+                            </li>
+                        </ul>
+
+                        
+                    </nav>
+                    <!--<img src="images/bars-solid.svg" class="menu-icon">-->
+                </div>
+            </div>
+        </header>
+
         <div class="container-1" >
             <div class="topnav">
+
+                <div style="width:10%; display: block;">
+                    <span style="font-family: 'Pacifico', cursive; font-size: 8vw;">Mike</span>
+                </div>
                 
                 <div style="width:100%; margin: auto 0;">
                     <a href="https://www.linkedin.com/in/michele-angelo-m-495462159/">
                         <!--<button class="btn" ><bold>⦿</bold> Available for hire</button>-->
-                        
                         <button class="button-33" role="button">Available for hire</button>
                     </a>
                 </div>
                 
-                <div style="width:5%; display: block;">
-                    <h3><i class="fa-solid fa-m"></i></h3>
-                </div>
+                
                 <!--MESSO NASCOSTO-->
                 <div style="width:5%; display: none;">
                     <div id="dark_toggle_1">
@@ -39,18 +91,16 @@
 
         
 
-        <div class="container">
-            
-            <header class="header">
+        <div class="container" style="padding-top: 8%;">
+            <div class="header" id="main-title">
                 <h1>
-                    Hi! I'm Michele Marcucci,<br>
+                    Ciao 👋<br>I'm Michele Marcucci.<br>
                     <span class="typed-text" id="tt"></span><span class="cursor">&nbsp;</span>
                 </h1>
-            </header>
+            </div>
 
             <div class="imagephone">
-                <img src="static/avatar.jpg" alt="Avatar" class="imgphone" > 
-                
+                <img src="assets/images/avatar.webp" alt="Avatar" class="imgphone" > 
             </div>
 
             
@@ -64,22 +114,31 @@
                     </div>-->
 
                     <div class="image">
-                        <img src="static/avatar.jpg" alt="Avatar" class="imghover">
+                        <img src="assets/images/avatar.webp" alt="Avatar" class="imghover">
                     </div>
 
                     <div class="text">
+                        <span>
                         <br>
                         I'm 22, based in Italy, Milan. I build websites and macOS apps.
-                        <br>Interested in image processing, machine learning, AI and 3D modeling.
+                        <br>
+                        Interested in image processing, machine learning, AI and 3D modeling.
                         <br><br>
+                        </span>
                     </div>
+                </div>
+                <div style="margin-left:auto; margin-right:auto; width:100%; margin-bottom:5%; margin-top:5%; display: none;">
+                    <span>
+                        Student at University of Milano Bicocca, currently applied for IT master's degree (2022-2024)<br>
+                        Download my thesis (Non-Photorealistic Rendering) <a href="https://drive.google.com/file/d/1_h1h3JAkBk2F98u1sHibVENb2HN4-y7Z/view?usp=sharing" style="color:gray">here</a>
+                    </span>
                 </div>
 
                 <!-- HTML !-->
                 <div style="display: block; margin-left: auto; margin-right: auto">
-                    <a href="static/CVMicheleAngeloMarcucci.pdf" style="text-decoration: none;">
+                    <a href="assets/files/CVMicheleAngeloMarcucci.pdf" style="text-decoration: none;">
                         <button class="button-35-dark" role="button" id="btn35">
-                            Download CV
+                            <span>Download CV</span>
                         </button>
                     </a>
                     
@@ -103,18 +162,9 @@
                 
 
                 
-                
-                
-                <!--<hr class="rounded">
-                <p style="text-align:center; font-weight:normal;">
-                    <i class="fa-solid fa-book"></i> Thesis <i class="fa-solid fa-book"></i>
-                    <br><br>Non Photorealistic Rendering (soon)
-                </p>
-                <hr class="rounded">
-                -->
-                <div style="margin-top: 0%;" data-aos="fade-up">
+                <div style="margin-top: 0%; display: none;">
                     <div class="section-title">
-                        <a class="effect-underline">.About</a>
+                        .About
                     </div>
                     <div class="list-card" style="margin-top: 10%;" >
                     
@@ -152,10 +202,10 @@
                         </div>
                         <div style="display:flex; margin-top:3%">
                             <div style="margin-right:5%">
-                                <i class="fa-solid fa-book"></i>
+                                <i class="fa-solid fa-file-pdf"></i>
                             </div>
                             <div>
-                                Download my thesis (Non-Photorealistic Rendering) <a href="" style="color:gray">here</a>
+                                Download my thesis (Non-Photorealistic Rendering) <a href="https://drive.google.com/file/d/1_h1h3JAkBk2F98u1sHibVENb2HN4-y7Z/view?usp=sharing" style="color:gray">here</a>
                             </div>
                         </div>
                     </div>
@@ -163,42 +213,13 @@
                 
                 
                 
-                <!--
-                <p style="font-weight:lighter; text-align: left;">
-                    <i class="fa-solid fa-building-columns"></i> - University Milano Bicocca (2019 - 2022)
-                    <br><br>
-                    <i class="fa-solid fa-graduation-cap"></i> - IT master's degree (2022 - 2024)
-                    <br><br>
-                    <i class="fa-solid fa-microchip"></i> - Backend Developer
-                    <br><br>
-                    <i class="fa-brands fa-google"></i> - <i style="color:blueviolet">#TeamPixel</i> 6
-                    <br><br>
-                    <i class="fa-solid fa-rocket"></i> - Working on ML projects
-                    <br><br>
-                    <i class="fa-solid fa-book"></i> - Download my thesis (Non-Photorealistic Rendering) <a href="" style="color:gray">here</a>
-                    <br><br>
-                    <i class="fa-solid fa-cat"></i> > <i class="fa-solid fa-dog"></i>  ¯\_(ツ)_/¯ 
-                    
-                </p>
-                -->
-
-                
-                
-
-                <p class="cit" style="font-weight:bolder; text-align: center; margin-top:150px; display:none">
-                    <br><br>
-                    
-                    <a data-aos="zoom-out" class="cit">
-                        <!--“First, solve the problem. Then, write the code.”-->
-                        "Make it work, make it right, make it fast"
-                    </a>
-                </p>
-                
             </section>
+            
+            
 
-            <section class="section" id="skills" style="margin-top:0%;" data-aos="fade-up">
+            <section class="section section-skills" id="skills" style="margin-top:0%;">
                 <div class="section-title">
-                    <a class="effect-underline">.Skills</a>
+                    .Skills
                 </div>
 
                 <div class="card-1" style="display: flex" >
@@ -322,69 +343,17 @@
             </section>
 
 
-            <section class="section" id="works" style="margin-top:150px" data-aos="fade-up">
+            <section class="section" id="works" style="margin-top:150px">
                 <div class="section-title">
-                    <a class="effect-underline">.Works</a>
+                    .Works
                 </div>
-                <p>If you want to see my recent project and works visit my <a style="color: gray;" href="https://github.com/mik3sw">GitHub profile</a></p>
+                <span style="text-align:center; font-size:2vw">If you want to see my recent project and works visit my <a style="color: gray;" href="https://github.com/mik3sw">GitHub profile</a></span>
             </section>
 
-            <!--
-            <section>
-                <ul class="cards">
-                    <li>
-                      <a href="https://github.com/mik3sw/OneClick" class="card">
-                        <img src="https://github.com/mik3sw/OneClick/raw/main/imgs/customTogglesExample.png" class="card__image" alt="" />
-                        <div class="card__overlay">
-                          <div class="card__header">
-                            <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>                     
-                            <img class="card__thumb" src="static/avatar.jpg" alt="" />
-                            <div class="card__header-text">
-                              <h3 class="card__title">OneClick</h3>            
-                              <span class="card__status">Swift</span>
-                            </div>
-                          </div>
-                          <p class="card__description">macOS Utility menubar app 🚀</p>
-                        </div>
-                      </a>      
-                    </li>
-                    <li>
-                      <a href="https://github.com/mik3sw/GoogleAssistantBot" class="card">
-                        <img src="https://play-lh.googleusercontent.com/ZU9cSsyIJZo6Oy7HTHiEPwZg0m2Crep-d5ZrfajqtsH-qgUXSqKpNA2FpPDTn-7qA5Q" class="card__image" alt="" />
-                        <div class="card__overlay">        
-                          <div class="card__header">
-                            <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>                 
-                            <img class="card__thumb" src="static/avatar.jpg" alt="" />
-                            <div class="card__header-text">
-                              <h3 class="card__title">TG Bots</h3>
-                              <span class="card__status">Python</span>
-                            </div>
-                          </div>
-                          <p class="card__description">This bot can manage your telegram groups</p>
-                        </div>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="https://github.com/mik3sw/SkinDetection" class="card">
-                        <img src="static/opencv.png" class="card__image" alt="" />
-                        <div class="card__overlay">
-                          <div class="card__header">
-                            <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>                     
-                            <img class="card__thumb" src="static/avatar.jpg" alt="" />
-                            <div class="card__header-text">
-                              <h3 class="card__title">SkinDetection</h3>            
-                              <span class="card__status">Python</span>
-                            </div>
-                          </div>
-                          <p class="card__description">Image processing project</p>
-                        </div>
-                      </a>
-                    </li>
-                  </ul>
-            </section>
-            -->
+            
             <div class="works">
-                <div class="cardwork" data-aos="fade-up">
+
+                <div class="cardwork">
                     <div class="cardimage">
                         <img class="cardimg" src="https://github.com/mik3sw/OneClick/raw/main/imgs/customTogglesExample.png" width="100%">
                     </div>
@@ -395,17 +364,23 @@
                         <div style="margin:5%;">
                             macOS Utility menubar app 🚀
                             Written in Swift and SwiftUI for macOS Monterey and Apple Silicon
+                            <br><br>
+                            <a style="color: gray; text-decoration: none;" href="https://github.com/mik3sw/OneClick">
+                                GitHub <i class="fa-solid fa-link"></i>
+                            </a>
                         </div>
                     </div>
+                    <!--
                     <div class="cardbtn">
                         <a href="https://github.com/mik3sw/OneClick">
                             <button class="button-35-dark" style="width:100%">GitHub</button>
                         </a>
                     </div>
+                    -->
                     
                 </div>
 
-                <div class="cardwork" data-aos="fade-up">
+                <div class="cardwork">
                     <div class="cardimage">
                         <img class="cardimg" src="https://github.com/mik3sw/SkinDetection/raw/main/docs/info.png" width="100%">
                     </div>
@@ -416,17 +391,22 @@
                         <div style="margin:5%;">
                             Human Skin Detection using OpenCV and a classifier.
                             Written in Python for Windows, macOS and Linux.
+                            <br><br>
+                            <a style="color: gray; text-decoration: none;" href="https://github.com/mik3sw/SkinDetection">
+                                GitHub <i class="fa-solid fa-link"></i>
+                            </a>
                         </div>
                     </div>
+                    <!--
                     <div class="cardbtn">
                         <a href="https://github.com/mik3sw/SkinDetection">
                             <button class="button-35-dark" style="width:100%">GitHub</button>
                         </a>
                     </div>
-                    
+                    -->
                 </div>
 
-                <div class="cardwork" data-aos="fade-up">
+                <div class="cardwork">
                     <div class="cardimage">
                         <img class="cardimg" src="https://github.com/mik3sw/GoogleAssistantBot/raw/master/QDyD.gif" width="100%">
                     </div>
@@ -437,14 +417,20 @@
                         <div style="margin:5%;">
                             Telegram bots for group management and chatbot.
                             Written in python using python-telegram-bot API.
+                            <br><br>
+                            <a style="color: gray; text-decoration: none;" href="https://github.com/mik3sw/GoogleAssistantBot">
+                                GitHub <i class="fa-solid fa-link"></i>
+                            </a>
+                            
                         </div>
                     </div>
+                    <!--
                     <div class="cardbtn">
                         <a href="https://github.com/mik3sw/GoogleAssistantBot">
                             <button class="button-35-dark" style="width:100%">GitHub</button>
                         </a>
                     </div>
-                    
+                    -->
                 </div>
             </div>
 
@@ -549,7 +535,9 @@
 
         
         
-        <script src="static/script.js"></script>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="assets/js/script.js"></script>
     </body>
 
 </html>

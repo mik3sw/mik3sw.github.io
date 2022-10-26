@@ -100,3 +100,68 @@ function type_start() {
 document.addEventListener("DOMContentLoaded", function() { // On DOM Load initiate the effect
   type();
 });
+
+
+
+
+
+const barOuter = document.querySelector(".bar-outer");
+const options = document.querySelectorAll(".bar-grey .option");
+let current = 1;
+
+
+
+
+
+options.forEach((option, i) => (option.index = i + 1));
+options.forEach(option => option.addEventListener("click", function() {
+    barOuter.className = "bar-outer";
+    barOuter.classList.add("pos"+option.index);
+
+    if (option.index > current) {
+        barOuter.classList.add("right");
+    } else if (option.index < current) {
+        barOuter.classList.add("left");
+    }
+    current = option.index;
+    currentm = option.index;
+
+    if(current === 1){
+      //document.getElementById("main-title").scrollIntoView({behavior: 'smooth'});
+      //$(window).scrollTop({top: 0, behavior: 'smooth'});
+      window.scrollTo({top: 0, behavior: 'smooth'});
+    }
+    if(current === 2){
+      document.getElementById("skills").scrollIntoView({behavior: 'smooth'});
+    }
+    if(current === 3){
+      document.getElementById("works").scrollIntoView({behavior: 'smooth'});
+    }
+
+}));
+
+
+
+
+
+$(document).ready(function(){
+  $(window).on('scroll', function(){
+    if ($(window).scrollTop()) {
+      $("header").addClass('bgc-dark');
+    }else{
+      $("header").removeClass('bgc-dark');
+  }
+  });
+});
+
+
+
+const circle = document.getElementById('circle');
+const circleStyle = circle.style;
+
+document.addEventListener('mousemove', e => {
+  window.requestAnimationFrame(() => {
+    circleStyle.top = `${ e.clientY - circle.offsetHeight/2 }px`;
+    circleStyle.left = `${ e.clientX - circle.offsetWidth/2 }px`;
+  });
+});
