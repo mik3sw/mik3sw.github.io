@@ -6,7 +6,7 @@
 
 * {
     box-sizing: border-box;
-    cursor: none;
+    /*cursor: none;*/
   }
   
   body {
@@ -363,8 +363,9 @@
   }
 
   .wrapper {
-    display: inline-flex;
+    display: flex;
     list-style: none;
+    padding-left: 0;
   }
   
   .wrapper .icon {
@@ -977,4 +978,19 @@ header{
 .work-text{
   text-align:center; 
   font-size:2vw
+}
+
+.contact{
+  background-color: white;
+  color: black;
+  margin: 3%;
+  padding: 3%;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.contact a{
+  color: black;
+  text-decoration: none;
+  
 }
