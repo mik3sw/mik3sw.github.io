@@ -7,51 +7,79 @@
 * {
     box-sizing: border-box;
     /*cursor: none;*/
+    scroll-behavior: smooth
   }
   
-  body {
+  html, body {
     color: #222;
     background-color: whitesmoke;
-    font-family: "Work Sans", sans-serif;
+    font-family: "Montserrat", sans-serif;
     transition: background-image 1.5s, color 1s;
     margin: 0;
     padding: 0;
+    background-image: url('blob-scene-haikei-desktop.svg');
     background-repeat: no-repeat; /* Do not repeat the image */
     background-size: cover;
+    background-attachment: fixed;
     /*background-image: url("light2.png");*/
-    background-color: rgb(0, 0, 0);
-    color: #d9d9d9;
-    background-image: url("assets/images/dark5.png");
-  }
-  /*body.night-mode {
-    
-    animation: fade;
-    background-color: rgb(0, 0, 0);
-    color: #d9d9d9;
-    background-image: url("dark5.png");
-    transition: background-image 1.5s, color 1s;
-    
-  }*/
-  
-  .header {
+    background-color: #001220;
+    color: white;
+    height: 100%;
 
+
+    /*overflow: hidden;*/
+    
+  }
+
+  .fullheight{
+    height: 100%;
+  }
+
+  .arrowup{
+    font-size: 4vw;
+    font-weight: 550;
+  }
+  .arrowdown{
+    font-size: 4vw;
+    font-weight: 550;
+    position: relative;
+    z-index: 2;
+  }
+
+  
+  .blob{
+    
+    z-index: 1;
+    position: absolute;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+  .blob svg{
+    transform: scale(0.8);
+  }
+
+  .header {
     width: 93%;
     max-width: 93%;
     height: 100%;
     display: flex;
     align-items: center;
+    justify-content: center;
     flex-direction: column;
     margin: auto;
-    
     flex-wrap: nowrap;
+    position: relative;
+    z-index: 2;
+    text-align: center;
   }
   .header h1{
-    font-size: 76px;
-    line-height: 89px;
+    font-size: 4vw;
     gap: 10px;
-    font-weight: 700;
+    font-weight: 550;
   }
-
+  
   .section {
     width: 80%;
     max-width: 90%;
@@ -60,15 +88,21 @@
     padding: 1rem;
     margin: auto;
     font-size:3vw;
+    position:relative;
+    z-index: 2;
   }
   .section-about {
     width: 80%;
     max-width: 80%;
     display: flex;
+    align-items: center;
+    justify-content: center;
     flex-direction: column;
     padding: 1rem;
     margin: auto;
     font-size:2vw;
+    position:relative;
+    z-index: 2;
   }
 
   .topnav {
@@ -82,8 +116,7 @@
     margin-top: 3%;
   }
   .container{
-    margin-left:100px;
-    margin-right:100px;
+    
   }
 
   .container p {
@@ -477,10 +510,12 @@ hr.rounded {
   border: 5px solid whitesmoke; 
   vertical-align: middle;
   transition: all 0.5s;
+  position: relative;
+  z-index: 2;
 }
 
 .imghover:hover{
-  border: 10px solid whitesmoke;
+  transform: scale(1.05);
 }
 
 .imgphone{
@@ -495,6 +530,9 @@ hr.rounded {
 
 .imagephone{
   display: block;
+  position:relative;
+  z-index: 2;
+  margin-top: 10%;
 }
 
 
@@ -548,7 +586,7 @@ hr.rounded {
 .button-35-dark:hover {
   /*box-shadow: linear-gradient(160deg, rgba(30,230,24,1) 0%, rgba(18,224,158,1) 38%, rgba(0,179,255,1) 79%);*/
   /*box-shadow: #909090 0 0 0 3px, transparent 0 0 0 0;*/
-  background-color: #1b1c1e;
+  background-color: #003964;
   color: #fff;
   transform: scale(1.05);
   /*background: rgb(52,46,42);
@@ -655,7 +693,7 @@ hr.rounded {
   background: linear-gradient(160deg, rgba(52,46,42,1) 0%, rgba(66,92,118,1) 100%);*/
   margin: 5% 1%; 
   padding:2.5%; 
-  background-color:#212224; 
+  background-color:#001a2e;; 
   color:white; 
   border-radius:30px;
   transition: all 0.5s;
@@ -719,13 +757,13 @@ hr.rounded {
   display: flex;
   height: 32px;
   left: 0;
-  padding: 0 21px;
+  padding: 0 18px;
   position: absolute;
   width: 100%;
 }
 .bar-purple {
-  background: #ffffff;/*#6000ea;*/
-  color: rgb(0, 0, 0);
+  background: #003964;/*#6000ea;*/
+  color: white;
   clip-path: polygon(
     360px 0,
     360px 32px,
@@ -751,7 +789,7 @@ hr.rounded {
 }
 .option {
   cursor: pointer;
-  line-height: 142px;
+  
   text-align: center;
   width: 33.33%;
 }
@@ -935,8 +973,8 @@ nav ul li{
 }
 .bgc-dark{
   transition: all 0.5s;
-  background: #1b1c1e;
-  padding: 0.5%;
+  background: #001220;
+  
 }
 .disable-hover {
   pointer-events: none;
@@ -961,6 +999,7 @@ header{
 
 .section-skills{
   width: 55%;
+  
 }
 
 #circle {

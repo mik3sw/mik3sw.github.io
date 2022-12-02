@@ -11,12 +11,19 @@
         <script defer src="https://use.fontawesome.com/releases/v6.0.0/js/all.js"></script>
         <link rel="stylesheet" href="assets/css/style.css">
         <link rel="stylesheet" href="assets/css/mobile.css">
+        <link rel="stylesheet" href="assets/css/blobz.min.css">
         <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
         <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> 
     </head>
-    <body style="background-image: url('assets/images/dark5.webp');">
+    <body>
         <!--<div class="circle" id="circle"></div>-->
-        <header id="header">
+        <!--style="background-image: url('assets/images/dark5.webp');"-->
+
+
+        
+  
+  
+        <header id="header" style="z-index: 3;">
             <div class="container-nav" id="navbar">
                 <div class="navbar">
                     <h2 class="title-logo" style="margin-top: 30px;" >
@@ -91,22 +98,43 @@
 
         
 
-        <div class="container" style="padding-top: 8%;">
-            <div class="header" id="main-title">
-                <h1>
-                    Ciao 👋<br>I'm Michele Marcucci.<br>
-                    <span class="typed-text" id="tt"></span><span class="cursor">&nbsp;</span>
-                </h1>
+        <div class="container" style="height: 100%;">
+            <div class="fullheight" id="maintitle">
+                <div class="blob">
+                    <svg id="visual" viewBox="0 0 900 900" width="900" height="900" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+                        <g transform="translate(526.915466186786 465.9288109763554)">
+                            <path d="M204.3 -209.6C251.2 -157.4 266.2 -78.7 280.6 14.4C295 107.5 308.7 215 261.8 268.5C215 322 107.5 321.5 17 304.5C-73.5 287.5 -147.1 254.1 -230.7 200.6C-314.4 147.1 -408.2 73.5 -437.7 -29.5C-467.2 -132.6 -432.5 -265.2 -348.8 -317.3C-265.2 -369.5 -132.6 -341.2 -26.9 -314.3C78.7 -287.4 157.4 -261.8 204.3 -209.6" fill="#6600FF">
+                            </path>
+                        </g>
+                    </svg>
+                    
+                </div>
+                <div class="header" id="main-title" syle="position: relative">
+                    <h1>
+                        Hi, I'm Michele Marcucci.<br>
+                        <span class="typed-text" id="tt"></span><span class="cursor">&nbsp;</span>
+                        <br><br>
+                        <a href="#about" style="color:white"><i class="fa-solid fa-arrow-down" ></i></a>
+                        
+                    </h1>
+                    
+                </div>
             </div>
-
-            <div class="imagephone">
-                <img src="assets/images/avatar.webp" alt="Avatar" class="imgphone" > 
-            </div>
+            
+            
+            
 
             
 
-            <section id="about" class="section-about">
-                
+            
+
+            <section id="about" class="section-about fullheight">
+                <div class="section-title">
+                    .About me
+                </div>
+                <div class="imagephone">
+                    <img src="assets/images/avatar.webp" alt="Avatar" class="imgphone" > 
+                </div>
                 <div style="display: flex; align-items: center;justify-content: center">
                     <!--<div class="image item">
                         <span class="notify-badge">🚀</span>
@@ -211,7 +239,9 @@
                     </div>
                 </div>
                 
-                
+                <div class="arrowdown">
+                    <a href="#skills" style="color:white"><i class="fa-solid fa-arrow-down"></i></a>
+                </div>
                 
             </section>
             
