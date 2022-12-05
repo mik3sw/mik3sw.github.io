@@ -1,6 +1,6 @@
 @media screen and (max-width: 1000px) {
     html, body{
-      background-image: url('blob-scene-haikei-mobile.svg');
+      /*background-image: url('blob-scene-haikei-mobile.svg');*/
     }
   .header{
     width: 93%;
@@ -169,6 +169,8 @@
     }
     .container-1{
       display: block;
+      z-index: 3;
+      position: relative;
     }
     .section-skills{
       width: 100%;

@@ -17,10 +17,10 @@
     transition: background-image 1.5s, color 1s;
     margin: 0;
     padding: 0;
-    background-image: url('blob-scene-haikei-desktop.svg');
-    background-repeat: no-repeat; /* Do not repeat the image */
-    background-size: cover;
-    background-attachment: fixed;
+    /*background-image: url('blob-scene-haikei-desktop.svg');*/
+    background-repeat: repeat; /* Do not repeat the image */
+    background-size:cover;
+    
     /*background-image: url("light2.png");*/
     background-color: #001220;
     color: white;
@@ -96,7 +96,7 @@
     max-width: 80%;
     display: flex;
     align-items: center;
-    justify-content: center;
+    
     flex-direction: column;
     padding: 1rem;
     margin: auto;
@@ -156,7 +156,6 @@
 
   .card-1 {
     margin: 1%;
-    margin-top:10%;
     padding: 3%;
     display: grid;
     border-radius: 30px;
