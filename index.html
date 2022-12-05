@@ -20,7 +20,7 @@
         <!--style="background-image: url('assets/images/dark5.webp');"-->
 
 
-        <svg style='position:absolute; z-index: 1' id="visual" viewBox="0 0 960 540" width="960" height="540" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+        <svg style='position:absolute; z-index: 1; top: 0px;' id="visual" viewBox="0 0 960 540" width="960" height="540" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
             <rect x="0" y="0" width="960" height="540" fill="#001220">
             </rect>
             <defs>
@@ -174,8 +174,9 @@
                         Hi, I'm Michele Marcucci.<br>
                         <span class="typed-text" id="tt"></span><span class="cursor">&nbsp;</span>
                         <br><br>
-                        <a href="#about" style="color:white"><i class="fa-solid fa-arrow-down" ></i></a>
-                        
+                        <div class="arrowdown ca3-scroll-down-link">
+                            <a  href="#about" style="color:white"><i class="fa-solid fa-arrow-down"></i></a>
+                        </div>
                     </h1>
                     
                 </div>
@@ -188,7 +189,7 @@
 
             
 
-            <section id="about" class="section-about fullheight">
+            <section id="about" class="section-about ">
                 <div class="section-title">
                     .About me
                 </div>
@@ -206,21 +207,36 @@
                     </div>
 
                     <div class="text">
+                        <div class="linkcontacts">
+                            <a href="mailto:michymarcucci@gmail.com">
+                                <i class="fa-solid fa-envelope"></i>
+                            </a>
+                            <a href="https://github.com/mik3sw">
+                                <i class="fa-brands fa-github"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/michele-angelo-m-495462159/">
+                                <i class="fa-brands fa-linkedin"></i>
+                            </a>
+                            <a>
+                                <i class="fa-brands fa-twitter"></i>
+                            </a>
+                        </div>
                         <span>
                         <br>
                         I'm 22, based in Italy, Milan. I build websites and macOS apps.
                         <br>
                         Interested in image processing, machine learning, AI and 3D modeling.
                         <br><br>
+                        Graduated at University of Milano Bicocca, IT Information<br>
+                        <a href="https://drive.google.com/file/d/1_h1h3JAkBk2F98u1sHibVENb2HN4-y7Z/view?usp=sharing" style="color:gray">My thesis</a>
+                        <br><br>
                         </span>
+                        
                     </div>
                 </div>
-                <div style="margin-left:auto; margin-right:auto; width:100%; margin-bottom:5%; margin-top:5%; display: none;">
-                    <span>
-                        Student at University of Milano Bicocca, currently applied for IT master's degree (2022-2024)<br>
-                        Download my thesis (Non-Photorealistic Rendering) <a href="https://drive.google.com/file/d/1_h1h3JAkBk2F98u1sHibVENb2HN4-y7Z/view?usp=sharing" style="color:gray">here</a>
-                    </span>
-                </div>
+                
+
+                
 
                 <!-- HTML !-->
                 <div style="display: block; margin-left: auto; margin-right: auto">
@@ -299,9 +315,10 @@
                     </div>
                 </div>
                 
-                <div class="arrowdown">
-                    <a href="#skills" style="color:white"><i class="fa-solid fa-arrow-down"></i></a>
+                <div class="arrowdown ca3-scroll-down-link" style="display: none;">
+                    <a class="ca3-scroll-down-link" href="#skills" style="color:white"><i class="fa-solid fa-arrow-down"></i></a>
                 </div>
+                
                 
             </section>
             
@@ -620,7 +637,9 @@
             </div>
 
            
-            <svg style='position:absolute; z-index:1; float:right; right: 0px; bottom: 0px;' id="visual" viewBox="0 0 960 540" width="960" height="540" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+            
+
+            <svg style='position:absolute; z-index:1; float:right; right: 0px; ' id="visual" viewBox="0 0 960 540" width="960" height="540" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
                 <rect x="0" y="0" width="960" height="540" fill="#001220">
                 </rect>
                 <defs>
@@ -682,13 +701,13 @@
                 
             </svg>
 
-
             <section class="section" id="contacts" style="margin-top:50px" >
                 <div class="section-title">
-                    .Contacts
+                    .(▀̿Ĺ̯▀̿ ̿)
                 </div>
-                <span class="work-text">If you want to contact me, please use the links below</span>
-                
+                <span class="work-text">If you want to contact me, use <a href="#about" style="color: white">these links</a></span>
+
+                <!--
                 <div style="display:flex; margin: 0 auto;">
                     <ul class="wrapper">
                         <a href="mailto:michymarcucci@gmail.com">
@@ -714,11 +733,11 @@
                         </a>
                         
                       </ul>
-                </div>
+                </div>-->
                 
-
                 
             </section>
+            
             
            
         </div>
