@@ -234,7 +234,12 @@ html, body {
 .prj-card-1{
     border-radius: 30px;
     border: solid 2px white;
-    
     margin:1%;
-    flex: 1;
+    
+}
+
+.section-contacts{
+    margin: 10%;
+    width: 80%;
+    margin-bottom: 10%;
 }

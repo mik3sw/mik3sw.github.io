@@ -125,5 +125,11 @@
         flex: 1;
     }
 
+    .section-contacts{
+        margin: 5%;
+        width: 90%;
+        margin-bottom: 15%;
+    }
+
     
 }
