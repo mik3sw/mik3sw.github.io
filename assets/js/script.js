@@ -71,3 +71,33 @@ for(const star of document.getElementsByClassName("magic-star")) {
 //   timeouts = [];
 //   intervals = [];
 // }
+
+
+$(function(){
+  $('button.dir').click(function(){
+      const $self = $(this);
+      $self.toggleClass('open');
+      $self.find('i.fa:first').toggleClass('fa-caret-right fa-caret-down');
+      $self.next().toggle(200);
+  });
+});
+
+
+
+function showPrj(project){
+  if(project=='OneClick'){
+    document.getElementById('OneClick').style.display = "block"
+    document.getElementById('SkinDetection').style.display = "none"
+    document.getElementById('TgBot').style.display = "none"
+  }
+  if(project=='SkinDetection'){
+    document.getElementById('OneClick').style.display = "none"
+    document.getElementById('SkinDetection').style.display = "block"
+    document.getElementById('TgBot').style.display = "none"
+  }
+  if(project=='TgBot'){
+    document.getElementById('OneClick').style.display = "none"
+    document.getElementById('SkinDetection').style.display = "none"
+    document.getElementById('TgBot').style.display = "block"
+  }
+}

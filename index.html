@@ -103,12 +103,124 @@
             <div class="section-text">
                 If you want to see my recent project and works visit my <a style="color: gray;" href="https://github.com/mik3sw">GitHub profile</a>
             </div>
-
-            
-
         </section>
+
+        <div class="worktree" style="display:none">
+            <div id="file-tree">
+                <button class="dir button-folder">
+                    <i class="fa fa-caret-right" aria-hidden="true"></i>
+                    <i class="fa fa-folder" aria-hidden="true"></i>Home
+                </button>
+                <div class="indent">
+                    <button class="dir button-folder">
+                        <i class="fa fa-caret-right" aria-hidden="true"></i>
+                        <i class="fa fa-folder" aria-hidden="true"></i>Cool_projects
+                    </button>
+                    <div class="indent">
+                        <button class="file button-folder" onclick="showPrj('OneClick')">
+                            <i class="fa-solid fa-file-code"></i> OneClick.xcodeprj
+                        </button>
+                        <button class="file button-folder" onclick="showPrj('SkinDetection')">
+                            <i class="fa-brands fa-python"></i> HumanSkinClassifier.py
+                        </button>
+                        <button class="file button-folder" onclick="showPrj('TgBot')">
+                            <i class="fa-solid fa-robot"></i> TelegramBot.py
+                        </button>
+                    </div>
+                    <button class="dir button-folder">
+                        <i class="fa fa-caret-right" aria-hidden="true"></i>
+                        <i class="fa fa-folder" aria-hidden="true"></i>ItWasOnTheDesktop
+                    </button>
+                    <div class="indent">
+                        <button class="file button-folder">
+                            <i class="fa fa-file" aria-hidden="true"></i>index.js
+                        </button>
+                    </div>
+                    <button class="dir button-folder">
+                        <i class="fa fa-caret-right" aria-hidden="true"></i>
+                        <i class="fa fa-folder" aria-hidden="true"></i>HOMEWORK
+                    </button>
+                    <div class="indent">
+                        <button class="dir button-folder">
+                            <i class="fa fa-caret-right" aria-hidden="true"></i>
+                            <i class="fa fa-folder" aria-hidden="true"></i>Documents
+                        </button>
+                        <div class="indent">
+                            <button class="file button-folder">
+                                <i class="fa fa-file" aria-hidden="true"></i>jquery.js
+                            </button>
+                        </div>
+                        <button class="file button-folder">
+                            <i class="fa fa-file" aria-hidden="true"></i>project.js
+                        </button>
+                    </div>
+                    <button class="file button-folder">
+                        <i class="fa fa-file" aria-hidden="true"></i>README.md
+                    </button>
+                </div>
+            </div>
+
+            <div class="project-view">
+                <div id="OneClick" style="display:none">
+                    <div class="prj-card">
+                        <div class="card-image">
+                            <img class="cardimg" src="https://github.com/mik3sw/OneClick/raw/main/imgs/customTogglesExample.png" width="100%">
+                        </div>
+                        <div class="cardtitle">OneClick</div>
+                        <div class="cardtext">
+                            macOS Utility menubar app 🚀
+                            Written in Swift and SwiftUI for macOS Monterey and Apple Silicon
+                        </div>
+                    </div>
+                </div>
+                <div id="SkinDetection" style="display:none">
+                    <div class="prj-card">
+                        <div class="cardimg"></div>
+                        <div class="card-title">Human Skin Classifier</div>
+                        <div class="card-text"></div>
+                    </div>
+                </div>
+                <div id="TgBot" style="display:none">
+                    <div class="prj-card">
+                        <div class="cardimg"></div>
+                        <div class="card-title">Telegram Bot</div>
+                        <div class="card-text"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-view-1">
+            <div class="prj-card-1">
+                
+                <div class="cardtitle">OneClick</div>
+                <div class="cardtext">
+                    macOS Utility menubar app 🚀
+                    Written in Swift and SwiftUI for macOS Monterey and Apple Silicon
+                </div>
+            </div>
+            <div class="prj-card-1">
+                
+                <div class="cardtitle">Human Skin Classifier</div>
+                <div class="cardtext">
+                    Human Skin Detection using OpenCV and a classifier.
+                    Written in Python for Windows, macOS and Linux.
+                </div>
+            </div>
+            <div class="prj-card-1">
+                
+                <div class="cardtitle">Telegram Bot</div>
+                <div class="cardtext">
+                    Telegram bots for group management and chatbot.
+                    Written in python using python-telegram-bot API.
+                </div>
+            </div>
+        </div>
+
         
 
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script src="assets/js/script.js"></script>
     </body>
 </html>
