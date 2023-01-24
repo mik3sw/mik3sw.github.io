@@ -1,199 +1,88 @@
-@media screen and (max-width: 1000px) {
-    html, body{
-      /*background-image: url('blob-scene-haikei-mobile.svg');*/
-    }
-  .header{
-    width: 93%;
-    max-width: 93%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    margin: auto;
-    flex-wrap: nowrap;
-    position: relative;
-    z-index: 2;
-  }
-  .header h1{
-    text-align: center;
-    font-size: 10vw;
-      
-  }
-  .linkcontacts{
-    font-size: 8vw;
-    display: block;  
-    text-align: center; 
-    
-  }
-  .linkcontacts a{
-    color:white;
-    margin: 5%;
-  }
-  
-  .blob{
-    z-index: 1;
-    position: absolute;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-    
-  }
-
-  .arrowup{
-    margin-bottom: 30%;
-    font-size: 10vw;
-    font-weight: 550;
-  }
-  .arrowdown{
-    font-size: 10vw;
-    font-weight: 550;
-    margin-top: 30%;
-  }
-
-
-    .topnav{
-      font-size: 5vw;
-    }
+@media only screen and (max-width:1000px){
     .btn{
-      font-size: 5vw;
-    }
-    .button-33 {
-      font-size: 5vw;
-      padding: 20px 40px;
-    }
-
-    .section-title{
-      font-size: 15vw;
-    }
-
-    .cit {
-      font-size:8vw;
-    }
-
-    .card-title{
-      font-size: 8vw;
-    }
-    .card-subtitle{
-      font-size: 4vw;
-    }
-
-    .card-icon{
-      font-size: 10vw;
-    }
-    .card-number-1{
-      font-size: 10vw;
-    }
-    .card-number-2{
-      font-size: 10vw;
-    }
-    .card-number-3{
-      font-size: 10vw;
-    }
-    .card-number-4{
-      font-size: 10vw;
-    }
-    .card-number-5{
-      font-size: 10vw;
-    }
-    .card-number-6{
-      font-size: 10vw;
-    }
-    .card-number-7{
-      font-size: 10vw;
-    }
-
-    .wrapper .icon {
-      width: 200px;
-      height: 200px;
-      font-size: 70px;
-    }
-    .section-about {
-      font-size: 5vw;
-      width: 90%;
-      max-width: 90%;
-    }
-    .card__title {
-      font-size: 4vw;
-      color: white;
-    }
-    .card__status {
-      font-size: 4vw;
-    }
-    .image{
-      display: none;
-    }
-    .imgphone{
-      display: block;
-      margin-bottom: 5%;
-    }
-    .button-35-dark {
-      font-size: 5vw;
-      padding: 2rem 3rem;
-    }
-    .button-35-light {
-      border-radius: 40px;
-      font-size: 5vw;
-      padding: 2rem 3rem;
-    }
-    .container{
-      margin-left:0px;
-      margin-right:0px;
-    }
-    .container p{
-      font-size: 5vw;
+        background-color: #6C63FF;
+        color: white;
+        border-radius: 30px;
+        border: solid 2px #6C63FF;
+        padding: 5% 10%;
+        font-size: 5vw;
+        cursor:pointer;
     }
     
-
-    .newcard{
-      width:70%;
+    .about-container{
+        height: auto;
     }
-    .cardtitle{
-      font-size: 7vw;
+    
+    .about-avatar{
+        display: none;
     }
-    .cardtext{
-      font-size: 4vw
+    .about-title{
+        margin: 5%;
+        width: 90%;
     }
-    .arrowdown{
-      display: block;
+    
+    .about-title h1{
+        font-size: 8vw;
+        font-weight: 700;
     }
-    .cardwork{
-      width:70%;
-      border-radius:40px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .cardimg{
-      border-radius: 30px;
-    }
-
-    .works{
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-      width: 100%;
+    
+    .about-title p{
+        font-size: 6vw;
+        font-weight: 400;
     }
 
-    header{
-      display: none;
+    .about-avatar-mobile{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 10%;
     }
-    .container-1{
-      display: block;
-      z-index: 3;
-      position: relative;
+
+    .section-about{
+        margin: 5%;
+        width: 90%;
     }
+    .section-title{
+        font-size: 8vw;
+        font-weight: 700;
+    }
+    
+    .section-text{
+        margin-top:3%;
+        font-size: 4vw;
+        font-weight: 400;
+    }
+    
     .section-skills{
-      width: 100%;
-      overflow-y: scroll;
+        margin: 5%;
+        width: 90%;
     }
 
-    .circle{
-      display: none;
+    .skills-cards{
+        display: block;
+        margin:0%;
+    }
+    
+    .card{
+        border-radius: 40px;
+        border: transparent;
+        background-color: #4158D0;
+        background: linear-gradient(90deg, #FC466B 0%, #3F5EFB 100%);
+        padding: 3%;
+        margin: 5%;
+    }
+    
+    .card-title{
+        font-size: 5vw;
+        font-weight: 700;
+        text-align: center;
+    }
+    
+    .card-text{
+        font-size: 4vw;
+        font-weight: 400;
+        text-align: center;
     }
 
-    .work-text{
-      font-size:5vw
-    }
+    
 }

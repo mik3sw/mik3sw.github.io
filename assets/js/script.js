@@ -1,167 +1,73 @@
-//document.querySelector('.tumbler__wrapper').addEventListener('click', _ => document.body.classList.toggle('night-mode'));
-AOS.init();
+let index = 0,
+    interval = 1000;
 
+const rand = (min, max) => 
+  Math.floor(Math.random() * (max - min + 1)) + min;
 
+const animate = star => {
+  star.style.setProperty("--star-left", `${rand(-10, 100)}%`);
+  star.style.setProperty("--star-top", `${rand(-40, 80)}%`);
 
+  star.style.animation = "none";
+  star.offsetHeight;
+  star.style.animation = "";
+}
+let timeouts = [],
+    intervals = [];
 
-//document.body.classList.toggle('night-mode')
-//document.getElementById("dark_toggle_1").style.display = "none";
-//document.getElementById("dark_toggle_2").style.display = "flex";
+const magic = document.querySelector(".magic");
 
-
-document.getElementById('dark_toggle_1').addEventListener('click', () => {
-    document.body.classList.toggle('night-mode')
-    document.getElementById("dark_toggle_1").style.display = "none";
-    document.getElementById("dark_toggle_2").style.display = "flex";
-    document.getElementById("btn35").classList.add('button-35-dark');
-    document.getElementById("btn35").classList.remove('button-35-light');
-
-});
-
-
-document.getElementById('dark_toggle_2').addEventListener('click', () => {
-    document.body.classList.toggle('night-mode')
-    document.getElementById("dark_toggle_2").style.display = "none";
-    document.getElementById("dark_toggle_1").style.display = "flex";
-    document.getElementById("btn35").classList.add('button-35-light');
-    document.getElementById("btn35").classList.remove('button-35-dark');
-
-
-});
-
-
-const typedTextSpan = document.querySelector(".typed-text");
-const cursorSpan = document.querySelector(".cursor");
-
-const textArray = ["Developer", "Freelancer", "Open sourcerer", "Linux user"];
-const colorArray = ["#3a8bc9", "#e09a43", "#ff4b19", "#4ca33b"]
-const typingDelay = 50;
-const erasingDelay = 50;
-const newTextDelay = 1500; // Delay between current and next text
-let textArrayIndex = 0;
-let charIndex = 0;
-
-function type() {
-  if (charIndex < textArray[textArrayIndex].length) {
-    document.getElementById("tt").style.color = colorArray[textArrayIndex];
-    document.getElementById("tt").classList.add("t"+(textArrayIndex+1));
-    if(textArrayIndex===0){
-      document.getElementById("tt").classList.remove("t4");
-    }
-    else{
-      //console.log("provo a rimuovere: t"+textArrayIndex)
-      document.getElementById("tt").classList.remove("t"+textArrayIndex);
-    }
-    if(!cursorSpan.classList.contains("typing")) cursorSpan.classList.add("typing");
-    typedTextSpan.textContent += textArray[textArrayIndex].charAt(charIndex);
-    charIndex++;
-    setTimeout(type, typingDelay);
-  } 
-  else {
-    cursorSpan.classList.remove("typing");
-  	setTimeout(erase, newTextDelay);
-  }
+magic.onmouseenter = () => {
+  let index = 1;
+  
+  for(const star of document.getElementsByClassName("magic-star")) {
+    timeouts.push(setTimeout(() => {  
+      animate(star);
+      
+      intervals.push(setInterval(() => animate(star), 1000));
+    }, index++ * 300));
+  };
 }
 
-function erase() {
-	if (charIndex > 0) {
-    if(!cursorSpan.classList.contains("typing")) cursorSpan.classList.add("typing");
-    typedTextSpan.textContent = textArray[textArrayIndex].substring(0, charIndex-1);
-    charIndex--;
-    setTimeout(erase, erasingDelay);
-  } 
-  else {
-    cursorSpan.classList.remove("typing");
-    textArrayIndex++;
-    if(textArrayIndex>=textArray.length) textArrayIndex=0;
-    setTimeout(type, typingDelay + 1100);
-  }
+magic.onmouseleave = onMouseLeave = () => {
+  for(const t of timeouts) clearTimeout(t);  
+  for(const i of intervals) clearInterval(i);
+  
+  timeouts = [];
+  intervals = [];
 }
+/*
+for(const star of document.getElementsByClassName("magic-star")) {
+  setTimeout(() => {
+    animate(star);
+    
+    setInterval(() => animate(star), 1000);
+  }, index++ * (interval / 3))
+}*/
 
-//document.addEventListener("DOMContentLoaded", function() { // On DOM Load initiate the effect
-//  if(textArray.length) setTimeout(type, newTextDelay + 250);
-//});
-textArray1 = ["Developer"];
-charIndex1 = 0
-function type_start() {
-    if (charIndex1 < textArray1[textArrayIndex].length) {
-      //document.getElementById("tt1").style.color = "orange";
-      if(!cursorSpan.classList.contains("typing")) cursorSpan.classList.add("typing");
-      typedTextSpan.textContent += textArray1[textArrayIndex].charAt(charIndex1);
-      charIndex1++;
-      setTimeout(type_start, typingDelay);
-    } 
-    else {
-      cursorSpan.classList.remove("typing");
-        //setTimeout(erase, newTextDelay);
-    }
-  }
+/* -- ↓↓↓ If you want the sparkle effect to only occur on hover, replace lines 16 and on with this code ↓↓↓ -- */
 
-document.addEventListener("DOMContentLoaded", function() { // On DOM Load initiate the effect
-  type();
-});
+// let timeouts = [],
+//     intervals = [];
 
+// const magic = document.querySelector(".magic");
 
+// magic.onmouseenter = () => {
+//   let index = 1;
+  
+//   for(const star of document.getElementsByClassName("magic-star")) {
+//     timeouts.push(setTimeout(() => {  
+//       animate(star);
+      
+//       intervals.push(setInterval(() => animate(star), 1000));
+//     }, index++ * 300));
+//   };
+// }
 
-
-
-const barOuter = document.querySelector(".bar-outer");
-const options = document.querySelectorAll(".bar-grey .option");
-let current = 1;
-
-
-
-
-
-options.forEach((option, i) => (option.index = i + 1));
-options.forEach(option => option.addEventListener("click", function() {
-    barOuter.className = "bar-outer";
-    barOuter.classList.add("pos"+option.index);
-
-    if (option.index > current) {
-        barOuter.classList.add("right");
-    } else if (option.index < current) {
-        barOuter.classList.add("left");
-    }
-    current = option.index;
-    currentm = option.index;
-
-    if(current === 1){
-      //document.getElementById("main-title").scrollIntoView({behavior: 'smooth'});
-      //$(window).scrollTop({top: 0, behavior: 'smooth'});
-      window.scrollTo({top: 0, behavior: 'smooth'});
-    }
-    if(current === 2){
-      document.getElementById("skills").scrollIntoView({behavior: 'smooth'});
-    }
-    if(current === 3){
-      document.getElementById("works").scrollIntoView({behavior: 'smooth'});
-    }
-
-}));
-
-
-
-
-
-$(document).ready(function(){
-  $(window).on('scroll', function(){
-    if ($(window).scrollTop()) {
-      $("header").addClass('bgc-dark');
-    }else{
-      $("header").removeClass('bgc-dark');
-  }
-  });
-});
-
-
-
-const circle = document.getElementById('circle');
-const circleStyle = circle.style;
-
-document.addEventListener('mousemove', e => {
-  window.requestAnimationFrame(() => {
-    circleStyle.top = `${ e.clientY - circle.offsetHeight/2 }px`;
-    circleStyle.left = `${ e.clientX - circle.offsetWidth/2 }px`;
-  });
-});
+// magic.onmouseleave = onMouseLeave = () => {
+//   for(const t of timeouts) clearTimeout(t);  
+//   for(const i of intervals) clearInterval(i);
+  
+//   timeouts = [];
+//   intervals = [];
+// }
