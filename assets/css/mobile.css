@@ -131,5 +131,42 @@
         margin-bottom: 15%;
     }
 
+    .workitem{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 10%;
+    }
+    
+    .workitem .number{
+        font-size: 18vw;
+        font-weight: 700;
+        width: 20%;
+        text-align: center;
+    }
+    
+    .workitem .text{
+        width: 80%;
+    }
+    
+    .workitem .text .title{
+        font-size: 6vw;
+        font-weight: 700;
+    }
+    
+    .workitem .text .subtitle{
+        font-size: 4vw;
+    }
+    
+    .workitem .text .link{
+        font-size: 4vw;
+    }
+    
+    .workitem .text .link a{
+        font-size: 4vw;
+        text-decoration: none;
+        color: gray;
+    }
+
     
 }

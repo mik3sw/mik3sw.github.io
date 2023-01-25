@@ -243,3 +243,65 @@ html, body {
     width: 80%;
     margin-bottom: 10%;
 }
+
+.worklist{
+    
+}
+
+.workitem{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5%;
+}
+
+.workitem .number{
+    font-size: 8vw;
+    font-weight: 700;
+    width: 20%;
+    text-align: center;
+    
+}
+
+.workitem .text{
+    width: 80%;
+}
+
+.workitem .text .title{
+    font-size: 3vw;
+    font-weight: 700;
+}
+.workitem .text .title span{
+    background-color: #6C63FF;
+}
+
+.workitem .text .subtitle{
+    font-size: 2vw;
+}
+
+.workitem .text .link{
+    font-size: 2vw;
+}
+
+.workitem .text .link a{
+    font-size: 2vw;
+    text-decoration: none;
+    color: gray;
+}
+
+strong {
+    position: relative;
+}
+  
+strong::before {
+    /* Highlight color */
+    background-color: #6C63FF;
+    content: "";
+    position: absolute;
+    width: calc(100% + 4px);
+    height: 60%;
+    left: -2px;
+    bottom: 0;
+    z-index: -1;
+    transform: rotate(-2deg);
+  }
