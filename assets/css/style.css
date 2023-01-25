@@ -295,6 +295,31 @@ strong {
   
 strong::before {
     /* Highlight color */
+    background-color: #784BA0;
+    content: "";
+    position: absolute;
+    width: calc(100% + 4px);
+    height: 60%;
+    left: -2px;
+    bottom: 0;
+    z-index: -1;
+    transform: rotate(2deg);
+  }
+
+footer{
+    text-align: center;
+    padding: 10%;
+    font-size: 2vw;
+    background-color: #202020;
+}
+
+
+.section-title strong {
+    position: relative;
+}
+  
+.section-title strong::before {
+    /* Highlight color */
     background-color: #6C63FF;
     content: "";
     position: absolute;

@@ -168,5 +168,10 @@
         color: gray;
     }
 
-    
+    footer{
+        text-align: center;
+        padding: 15%;
+        font-size: 4vw;
+        background-color: #202020;
+    }
 }
