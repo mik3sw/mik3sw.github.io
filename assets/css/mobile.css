@@ -174,4 +174,41 @@
         font-size: 4vw;
         background-color: #202020;
     }
+
+    strong {
+        position: relative;
+    }
+      
+    strong::before {
+        /* Highlight color */
+        background-color: #784BA0;
+        content: "";
+        position: absolute;
+        width: calc(100% + 4px);
+        height: 60%;
+        left: -2px;
+        bottom: 0;
+        z-index: -1;
+        transform: rotate(2deg);
+    }
+
+    .section-title strong {
+        position: relative;
+    }
+      
+    .section-title strong::before {
+        /* Highlight color */
+        background-color: #6C63FF;
+        content: "";
+        position: absolute;
+        width: calc(100% + 4px);
+        height: 60%;
+        left: -2px;
+        bottom: 0;
+        z-index: -1;
+        transform: rotate(-2deg);
+    }
+
+    
+    
 }
