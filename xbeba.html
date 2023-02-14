@@ -1,8 +1,103 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap'>
+        <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Montserrat:400,700'>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+ 
+        <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet"> 
+        <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet"> 
+        <script defer src="https://use.fontawesome.com/releases/v6.0.0/js/all.js"></script>
+        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" href="assets/css/mobile.css">
+        <link rel="stylesheet" href="assets/css/magictext.css">
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> 
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     </head>
-    <body>
-        <h1>xBeba</h1>
+    <body style="margin: 10%;">
+        <h1 style="font-size: 10vw;">Buon San Valentino! ❤️❤️</h1>
+
+        <p style="font-size: 6vw;">
+            Come da tradizione, in attesa che finalmente nel tuo corpo il sangue arrivi a scaldare anche le zone periferiche, anche per questa occasione ti ho regalato delle calze da aggiungere alla tua collezione.
+            <br><br>⚠️MA⚠️<br><br>
+            Chissà come saranno queste...🧐
+            <br><br>
+            Lo scoprirai solo se riuscirai a rispondere correttamente a queste domande!
+
+        </p>
+        <div id="quest">
+            <div style="font-size: 6vw; margin-top: 5%;">
+                <div style="font-weight: 700;">
+                    Una semplice dai, a Michele piacciono le ricce?
+                </div>
+                Vero <input style="width:50px; height: 50px;" type="checkbox" id="v1" onclick='handleClick(this)'> Falso <input type="checkbox" style="width:50px; height: 50px;" onclick='handleClick(this)'id="f1">
+            </div>
+    
+            <div style="font-size: 6vw; margin-top: 5%;">
+                <div style="font-weight: 700;">
+                    Cosa preferisco tra i due?
+                </div>
+                Dolce <input style="width:50px; height: 50px;" type="checkbox" id="f2" onclick='handleClick(this)'> Salato<input type="checkbox" style="width:50px; height: 50px;" onclick='handleClick(this)'id="v2">
+            </div>
+    
+            <div style="font-size: 6vw; margin-top: 5%;">
+                <div style="font-weight: 700;">
+                    Quale regalo preferisco?
+                </div>
+                Set lego <input style="width:50px; height: 50px;" type="checkbox" id="v3" onclick='handleClick(this)'> Scheda grafica nuova<input type="checkbox" style="width:50px; height: 50px;" onclick='handleClick(this)'id="f3">
+            </div>
+    
+            <div style="font-size: 6vw; margin-top: 5%;">
+                <div style="font-weight: 700;">
+                    Qual è il mio peggior difetto?
+                </div>
+                Troppo bello <input style="width:50px; height: 50px;" type="checkbox" id="f4" onclick='handleClick(this)'> Distratto <input  style="width:50px; height: 50px;"type="checkbox"  onclick='handleClick(this)' id="v4">
+            </div>
+
+            <div style="font-size: 6vw; margin-top: 5%;">
+                <div style="font-weight: 700;">
+                    Qual è la massa del sole?
+                </div>
+                2x10^30Kg <input style="width:50px; height: 50px;" type="checkbox" id="v5" onclick='handleClick(this)'> Che ne so <input  style="width:50px; height: 50px;"type="checkbox"  onclick='handleClick(this)' id="f5">
+            </div>
+        </div>
+        
+
+        <div id="image" style="display: none;">
+            <h1 style="font-size: 10vw; margin-top: 5%;" >Brava! Tutte le risposte sono corrette!</h1>
+            <p style="font-size: 6vw; margin-top: 5%;">Ecco a te il regalo</p>
+            <img style="margin-top: 5%;"src="socks.jpg">
+        </div>
+
+        <script>
+            function handleClick(){
+                v1 = document.getElementById("v1").checked
+                f1 = !document.getElementById("f1").checked
+                v2 = document.getElementById("v2").checked
+                f2 = !document.getElementById("f2").checked
+                v3 = document.getElementById("v3").checked
+                f3 = !document.getElementById("f3").checked
+                v4 = document.getElementById("v4").checked
+                f4 = !document.getElementById("f4").checked
+                v5 = document.getElementById("v5").checked
+                f5 = !document.getElementById("f5").checked
+                console.log(v1)
+                //v = document.getElementById("v").checked
+                //f = !document.getElementById("f").checked
+
+
+                if(v1 && f1 && v2 && f2 && v3 && f3 && v4 && f4 && v5 && f5){
+                    document.getElementById("image").style.display="block";
+                    document.getElementById("quest").style.display="none";
+                }
+            }
+            
+        </script>
     </body>
+
+    
 </html>
