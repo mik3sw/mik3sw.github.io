@@ -72,6 +72,7 @@
         padding: 3%;
         margin: 5%;
         margin-bottom: 10%;
+        width: auto;
     }
     
     .card-title{
@@ -181,7 +182,7 @@
       
     strong::before {
         /* Highlight color */
-        background-color: #784BA0;
+        background-color: var(--secondary-color);
         content: "";
         position: absolute;
         width: calc(100% + 4px);
@@ -198,7 +199,7 @@
       
     .section-title strong::before {
         /* Highlight color */
-        background-color: #6C63FF;
+        background-color: var(--primary-color);
         content: "";
         position: absolute;
         width: calc(100% + 4px);
@@ -207,6 +208,30 @@
         bottom: 0;
         z-index: -1;
         transform: rotate(-2deg);
+    }
+
+    .mode-button{
+        margin: 5%;
+        margin-bottom: 0%;
+        float: right;
+    }
+    
+    .toggle-btn-dark{
+        background-color: transparent;
+        border: none;
+        color:white;
+        cursor: pointer;
+    }
+    
+    .toggle-btn-light{
+        background-color: transparent;
+        border: none;
+        color: black;
+        cursor: pointer;
+    }
+    
+    .symbol{
+        font-size: 8vw;
     }
 
     

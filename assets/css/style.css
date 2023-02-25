@@ -1,31 +1,51 @@
+:root{
+    --primary-color: #6C63FF;
+    --primary-color2: #8983ff;
+    --link-color: gray;
+    --link-color: rgb(85, 85, 85);
+
+    --secondary-color: #784BA0;
+    --secondary-color2: #b270ec;
+}
 html, body {
-    color: white;
-    background-color: #252525;
+    
     /*font-family: 'Roboto Mono', monospace;*/
     font-family: 'Space Grotesk', sans-serif;
     /*font-family: "Montserrat", sans-serif;*/
-    transition: background-image 1.5s, color 1s;
+    transition: all 1s;
     margin: 0;
     padding: 0;
     height: 100%;
 }
 
+.light-mode{
+    color: black;
+    background-color: #eeeeee;
+    
+    transition: all 1s;
+}
+
+.dark-mode{
+    color: white;
+    background-color: #252525;
+}
+
 .btn{
-    background-color: #6C63FF;
+    background-color: var(--primary-color);
     color: white;
     border-radius: 15px;
-    border: solid 2px #6C63FF;
-    padding: 5% 10%;
-    font-size: 2vw;
+    border: solid 2px var(--primary-color);
+    padding: 3% 6%;
+    font-size: 30px;
     cursor:pointer;
     font-family: 'Space Grotesk', sans-serif;
 }
 
 .btn:hover{
     background-color: transparent;
-    color: #6C63FF;
+    color: var(--primary-color);
     border-radius: 15px;
-    border: solid 2px #6C63FF;
+    border: solid 2px var(--primary-color);
 }
 
 
@@ -43,12 +63,12 @@ html, body {
 }
 
 .about-title h1{
-    font-size: 4vw;
+    font-size: 50px;
     font-weight: 700;
 }
 
 .about-title p{
-    font-size: 2.5vw;
+    font-size: 30px;
     font-weight: 400;
 }
 
@@ -61,7 +81,7 @@ html, body {
 }
 
 .imgavatar{
-    width:100%; 
+    width:80%; 
     vertical-align: middle;
     transition: all 0.5s;
     position: relative;
@@ -85,27 +105,37 @@ html, body {
     width: 50%;
 }
 .section-title{
-    font-size: 4vw;
+    font-size: 50px;
     font-weight: 700;
 }
 
 .section-text{
     margin-top:3%;
-    font-size: 2vw;
+    font-size: 25px;
     font-weight: 400;
+}
+.section-text h3{
+    text-decoration: underline;
 }
 
 .section-skills{
     margin: 10%;
+    margin-top: 0%;
     width: 80%;
     margin-bottom: 5%;
+}
+
+.section-works{
+    margin-top: 10%;
+    
 }
 
 .skills-cards{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin:10%;
+    margin-left:10%;
+    margin-right:10%;
     margin-top: 0%;
     
 }
@@ -118,21 +148,24 @@ html, body {
     background-attachment: fixed;
     padding: 3%;
     margin: 1%;
+    width: 50%;
+    color: white;
+    transition: all 0.25s;
 }
 
 .card:hover{
-    box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.2), 0 6px 20px 0 rgba(255, 255, 255, 0.19);
+    transform: scale(1.05);
 }
 
 .card-title{
-    font-size: 2vw;
+    font-size: 30px;
     font-weight: 700;
     text-align: center;
     margin-bottom: 3%;
 }
 
 .card-text{
-    font-size: 1.5vw;
+    font-size: 25px;
     font-weight: 400;
     text-align: center;
 }
@@ -256,7 +289,7 @@ html, body {
 }
 
 .workitem .number{
-    font-size: 8vw;
+    font-size: 80px;
     font-weight: 700;
     width: 20%;
     text-align: center;
@@ -268,23 +301,24 @@ html, body {
 }
 
 .workitem .text .title{
-    font-size: 3vw;
+    font-size: 30px;
     font-weight: 700;
 }
 .workitem .text .title span{
-    background-color: #6C63FF;
+    background-color: var(--primary-color);
 }
 
 .workitem .text .subtitle{
-    font-size: 2vw;
+    font-size: 25px;
 }
 
 .workitem .text .link{
-    font-size: 2vw;
+    font-size: 25px;
+    color: var(--link-color)
 }
 
 .workitem .text .link a{
-    font-size: 2vw;
+    font-size: 25px;
     text-decoration: none;
     color: gray;
 }
@@ -295,7 +329,7 @@ strong {
   
 strong::before {
     /* Highlight color */
-    background-color: #784BA0;
+    background-color: var(--secondary-color);
     content: "";
     position: absolute;
     width: calc(100% + 4px);
@@ -320,7 +354,7 @@ footer{
   
 .section-title strong::before {
     /* Highlight color */
-    background-color: #6C63FF;
+    background-color: var(--primary-color);
     content: "";
     position: absolute;
     width: calc(100% + 4px);
@@ -332,4 +366,78 @@ footer{
 }
 
 
-  
+.menu-container{
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 3%;
+    top: 0;
+    bottom:0;
+    position:fixed;
+    display: none;
+}
+
+.menu-main{
+    position:absolute;
+    background-color: rgb(255, 255, 255);
+    color: black;
+    z-index: 5;
+    padding: 5% 10%;
+    border-radius: 30px;
+    width: 120px;
+    text-align: center;
+    font-size: 2vw;
+}
+.menu-child{
+    position:absolute;
+    color: black;
+    padding: 5% 10%;
+    border-radius: 30px;
+    width: 120px;
+    text-align: center;
+    font-size: 2vw;
+}
+
+.c1{
+    z-index: 4;
+    background-color: rgba(255, 255, 255, 0.50);
+    transform: translateX(5px);
+}
+.c2{
+    z-index: 3;
+    background-color: rgba(255, 255, 255, 0.50);
+    transform: translateX(10px);
+}
+.c3{
+    z-index: 2;
+    background-color: rgba(255, 255, 255, 0.50);
+    transform: translateX(15px);
+}
+.c4{
+    z-index: 1;
+    background-color: rgba(255, 255, 255, 0.50);
+    transform: translateX(20px);
+}
+
+
+.mode-button{
+    margin: 1%;
+    float: right;
+}
+
+.toggle-btn-dark{
+    background-color: transparent;
+    border: none;
+    color:white;
+    cursor: pointer;
+}
+
+.toggle-btn-light{
+    background-color: transparent;
+    border: none;
+    color: black;
+    cursor: pointer;
+}
+
+.symbol{
+    font-size: 40px;
+}

@@ -1,3 +1,6 @@
+document.body.classList.toggle("dark-mode");
+document.getElementById("btn-light").style.display = "none";
+
 let index = 0,
     interval = 1000;
 
@@ -100,4 +103,41 @@ function showPrj(project){
     document.getElementById('SkinDetection').style.display = "none"
     document.getElementById('TgBot').style.display = "block"
   }
+}
+
+var isDark = true;
+const audio = new Audio("https://www.fesliyanstudios.com/play-mp3/387");
+
+function darkModeToggle() {
+  var element = document.body;
+  if(isDark){
+    audio.play();
+    isDark = !isDark;
+    document.getElementById("btn-light").style.display = "block";
+    document.getElementById("btn-dark").style.display = "none";
+    document.getElementById("cvbtn").style.color = "black";
+    element.classList.remove("dark-mode");
+    element.classList.toggle("light-mode");
+    document.querySelector(':root').style.setProperty("--primary-color", "#8983ff");
+    document.querySelector(':root').style.setProperty("--secondary-color", "#b270ec");
+    document.getElementById("footer").style.backgroundColor = "#cecece";
+    
+    //document.querySelector(':root').style.setProperty("--link-color", "rgb(85, 85, 85)")
+    
+    
+  }
+  else{
+    audio.play();
+    isDark = !isDark;
+    document.getElementById("btn-light").style.display = "none";
+    document.getElementById("btn-dark").style.display = "block";
+    document.getElementById("cvbtn").style.color = "white";
+    element.classList.remove("light-mode");
+    element.classList.toggle("dark-mode");
+    document.querySelector(':root').style.setProperty("--primary-color", "#6C63FF");
+    document.querySelector(':root').style.setProperty("--secondary-color", "#784BA0");
+    document.getElementById("footer").style.backgroundColor = "#202020";
+    //document.querySelector(':root').style.setProperty("--link-color", "rgb(150, 150, 150)")
+  }
+  
 }
