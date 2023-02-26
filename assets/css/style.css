@@ -12,7 +12,7 @@ html, body {
     /*font-family: 'Roboto Mono', monospace;*/
     font-family: 'Space Grotesk', sans-serif;
     /*font-family: "Montserrat", sans-serif;*/
-    transition: all 1s;
+    transition: all 0.25s;
     margin: 0;
     padding: 0;
     height: 100%;
@@ -21,8 +21,6 @@ html, body {
 .light-mode{
     color: black;
     background-color: #eeeeee;
-    
-    transition: all 1s;
 }
 
 .dark-mode{
@@ -143,8 +141,8 @@ html, body {
 .card{
     border-radius: 30px;
     border: transparent;
-    background-color: #FF3CAC;
-    background-image: linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);
+    background-color: black;
+    background-image: linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #3F5EFB 100%);
     background-attachment: fixed;
     padding: 3%;
     margin: 1%;
@@ -154,7 +152,8 @@ html, body {
 }
 
 .card:hover{
-    transform: scale(1.05);
+    transform: scale(0.95);
+    
 }
 
 .card-title{
