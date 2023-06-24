@@ -1,343 +1,325 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>
-            Michele Marcucci - Developer portfolio
-        </title>
-        
-        <meta name="description" content="Developer portfolio, skills and works">
-        <meta name="theme-color" content="#252525">
-        <meta property="og:image" content="assets/images/preview.png" />
-        <meta property="og:url" content="https://michelemarcucci.me" />
-        <meta property="og:type" content="website" />
-
-        <link rel="shortcut icon" type="image/x-icon" href="maleavatar.ico">
-
-        <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap'>
-        <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Montserrat:400,700'>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
- 
-        <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet"> 
-        <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet"> 
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"> 
         <script defer src="https://use.fontawesome.com/releases/v6.0.0/js/all.js"></script>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
-        <link rel="stylesheet" href="assets/css/style.css">
-        <link rel="stylesheet" href="assets/css/mobile.css">
-        <link rel="stylesheet" href="assets/css/magictext.css">
-        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> 
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+        <link rel="stylesheet" href="CSS/style.css">
+        <link rel="stylesheet" href="CSS/mobile.css">
     </head>
-    <body>
-        <div class="menu-container">
-            <div class="menu-main">Menu</div>
-            <div class="menu-child c1">About</div>
-            <div class="menu-child c2">Skills</div>
-            <div class="menu-child c3">Works</div>
-            <div class="menu-child c4">Contacts</div>
+    <body id="start">
+        <div class="cursor">
+            <div class="cursor__ball cursor__ball--big ">
+              <svg height="30" width="30">
+                <circle cx="15" cy="15" r="12" stroke-width="0"></circle>
+              </svg>
+            </div>
+            
+            <div class="cursor__ball cursor__ball--small">
+              <svg height="10" width="10">
+                <circle cx="5" cy="5" r="4" stroke-width="0"></circle>
+              </svg>
+            </div>
+        </div>
+        <!-- <object data="HTML/navbar.html"></object> -->
+        <!-- NAVBAR -->
+        <div class="navbar-container">
+            <div class="navbar">
+                <a href="#start"><div class="navbar-logo"></div></a>
+                <div class="navbar-item"><a href="#works" class="selected">Work</a></div>
+                <div class="navbar-item"><a href="#about" class="">About</a></div>
+                <div class="navbar-item"><a href="#skills" class="">Skills</a></div>
+            </div>
+            
+            <div class="contact-btn">
+                <a href="mailto:michymarcucci@gmail.com" style="text-decoration: none; color: black;" class="hoverable">Contact</a>
+            </div>
         </div>
 
-        <div class="mode-button">
-            <button class="toggle-btn-dark" onclick="darkModeToggle()" id="btn-dark">
-                <span class="material-symbols-outlined symbol">
-                    light_mode
-                </span>
-            </button>
-            <button class="toggle-btn-light" onclick="darkModeToggle()" id="btn-light">
-                <span class="material-symbols-outlined symbol">
-                    dark_mode
-                </span>
-            </button>
-        </div>
-        
-
-        <div class="about-container">
-            <div class="about-title">
-                <h1>
-                    Hi! I'm Mike.<br>
-                    <span class="magic">
-                        <span class="magic-text">Junior Developer.</span>
-                    </span> 
-                </h1>
-                <p> Welcome to my personal portfolio!</p>
-                <div>
-                    <a href="assets/files/CVMicheleAngeloMarcucci.pdf">
-                        <button class="btn" id="cvbtn">
-                            Download CV
-                        </button>
+        <!-- HEADER PRINCIPALE -->
+        <div class="header">
+            <div class="title">
+                <a class="hoverable">
+                    I'm Mike.<br>
+                    Portfolio/23
+                </a>
+            </div>
+            <div class="subtitle-container">
+                
+                <div class="subtitle1">
+                    <a class="hoverable">
+                        Fullstack Developer
+                    </a>
+                    
+                    <div class="subsubtitle">
+                        LAST UPDATE ✦ 2023 \///<br>
+                        ©MICHELE MARCUCCI<br>
+                        ((SCROLL))
+                    </div>
+                </div>
+                <div class="subtitle2">
+                    <a class="hoverable">
+                        ✺ Here you can see<br>
+                        some of my latest<br>
+                        works and projects
                     </a>
                     
                 </div>
             </div>
-            <div class="about-avatar">
-                <img src="assets/images/maleavatar2.svg" alt="Avatar" class="imgavatar">
-            </div>
-        </div>
-
-        <div class="about-avatar-mobile">
-            <img src="assets/images/maleavatar2.svg" alt="Avatar" class="imgavatar-mobile">
-        </div>
-
-        
-        
-        
-        
-
-        <div class="section-container">
-            <section class="section-about">
-                <div class="section-title">
-                    <strong class="highlight">
-                        .aboutMe
-                    </strong>
-                </div>
-                <div class="section-text">
-                    I'm 22, based in Italy, Milan. I build websites and desktop apps.<br>
-                    Interested in image processing, machine learning and AI.<br>
-                    <br>
-                    Graduated at University of Milano Bicocca, IT Information. 
-                    <a href="https://drive.google.com/file/d/1EaKdeCBftCow3Vgmvx5Vo5IGZbhvMLjY/view?usp=sharing" style="text-decoration:none; color: gray;">My thesis</a>
-                    <br>
-                    <h3>Hobby and free time</h3>
-                    <ul>
-                        <li>
-                            LEGO Builder
-                        </li>
-                        <li>
-                            I randomly install Linux on old laptops ('cause why not?)
-                        </li>
-                        <li>
-                            Hiking
-                        </li>
-                    </ul>
-                    
-                    <h3>Work experience</h3>
-                    <ul>
-                        <li>
-                            I'm currently working as a C# .NET developer at <a href="https://www.redix.it" style="text-decoration:none; color: gray;">www.redix.it</a>.
-                        </li>
-                    </ul>
-                    
-                </div>
-            </section>
-            <div class="about-avatar">
-                <img src="assets/images/illustratedAvatar.svg" alt="Avatar" class="imgavatar">
-            </div>
-        </div>
-        
-
-        <section class="section-skills">
-            <div class="section-title"><strong>.skills</strong></div>
-            <div class="section-text">
-                I am highly versatile and proficient in various programming languages. My approach to learning is project-based: I acquire new skills and technologies based on the specific requirements of each project.
-            </div>
-        </section>
-
-        <div class="skills-cards">
-            <div class="card">
-                <div class="card-title">Software development</div>
-                <div class="card-text">
-                    The main languages I use are Python, Java, C# and Swift.
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-title">Websites development</div>
-                <div class="card-text">
-                    I build responsive websites with HTML, CSS and JavaScript
-                </div>
-            </div>
             
         </div>
-        <div class="skills-cards">
+
+        <section class="works" id="works">
+            <div class="skill-text">
+                <a class="hoverable">
+                    Works
+                </a>
+            </div>
+            <div class="grid-container" style="margin-top: 100px;">
+                <div class="card">
+                    <a href="HTML/pharmshift.html">
+                        <img src="IMG/pharmshift4.png" style="width: 100%; height: 100%; object-fit: cover;">
+                    </a>
+                      
+                      <div class="button-container">
+                        <a class="hoverable" href="HTML/pharmshift.html" style="width: 80%; display: flex; align-items: center; justify-content: center;">
+                            <button class="button"><i class="fa-brands fa-microsoft"></i> PharmShift</button>
+                        </a>
+                        
+                      </div>
+                      <div class="button-container-2">
+                        <div class="button2">
+                            <div class="btn2">C#</div>
+                            <div class="btn2">.NET</div>
+                        </div>
+                      </div>
+                </div>
+
+                <div class="card">
+                    <a href="https://github.com/mik3sw/SkinDetection">
+                        <img src="IMG/skin.png" style="width: 100%; height: 100%; object-fit: cover;">
+                    </a>
+                    
+                    <div class="button-container">
+                        <a class="hoverable" href="https://github.com/mik3sw/SkinDetection" style="width: 80%; display: flex; align-items: center; justify-content: center;">
+                            <button class="button"><i class="fa-brands fa-python"></i> SkinDetection</button>
+                        </a>
+                      
+                    </div>
+                    <div class="button-container-2">
+                      <div class="button2">
+                          <div class="btn2">Python</div>
+                          <div class="btn2">OpenCV</div>
+                      </div>
+                    </div>
+              </div>
+                
+
+                <div class="card">
+                    <div class="content">
+                        <a href="https://github.com/mik3sw/OneClick">
+                            <img src="IMG/oneclick2.png" style="width: 100%; height: 100%; object-fit: cover;">
+                        </a>
+                       
+                      </div>
+                      <div class="button-container">
+                        <a class="hoverable" href="https://github.com/mik3sw/OneClick" style="width: 80%; display: flex; align-items: center; justify-content: center;">
+                            <button class="button"><i class="fa-brands fa-apple"></i> OneClick</button>
+                        </a>
+                        
+                      </div>
+                      <div class="button-container-2">
+                        <div class="button2">
+                            <div class="btn2">macOS</div>
+                            <div class="btn2">Swift</div>
+                        </div>
+                      </div>
+                </div>
+
+                
+
+                <!-- <div class="card mobileonly">
+                    <img src="IMG/cv.png" style="width: 100%; height: 100%; object-fit: cover;">
+                    <div class="button-container">
+                      <button class="button">Resume</button>
+                    </div>
+                    <div class="button-container-2">
+                      <div class="button2">
+                          <div class="btn2"></div>
+                          <div class="btn2"></div>
+                      </div>
+                    </div> 
+              </div> -->
+
+                
+
+                
+
+            </div>
+
+            <div class="work-card">
+                <div class="card-text">
+                    I'm currently working as a .NET developer at Redix Informatica and i'm
+                    designing and building a standalone application for managing pharmacy shifts.
+                </div>
+                
+            </div>  
+        </section>
+        <section class="works" id="about">
+            <div class="skill-text">
+                <a class="hoverable">
+                    About
+                </a>
+            </div>
+            <div class="grid-container" style="margin-top: 100px;">
+                <div class="card">
+                        <a href="https://github.com/mik3sw">
+                            <img src="IMG/github.png" style="width: 100%; height: 100%; object-fit: cover;">
+                        </a>
+                      
+                      <div class="button-container">
+                        <a class="hoverable" href="https://github.com/mik3sw" style="width: 80%; display: flex; align-items: center; justify-content: center;">
+                            <button class="button"><i class="fa-brands fa-github"></i> GitHub</button>
+                        </a>
+                        <!-- <button class="button"><i class="fa-brands fa-github"></i> GitHub</button> -->
+                      </div>
+                       <div class="button-container-2">
+                        <div class="button2">
+                            <div class="btn2">Repos</div>
+                        </div>
+                      </div> 
+                </div>
+                
+
+                <div class="card">
+                    <div class="content">
+                        <a href="https://datapizza.tech/folio/michele_angelomarcucci127">
+                            <img src="IMG/datapizza.png" style="width: 100%; height: 100%; object-fit: cover;">
+                        </a>
+                       
+                      </div>
+                      <div class="button-container">
+                        <a class="hoverable" href="https://datapizza.tech/folio/michele_angelomarcucci127" style="width: 80%; display: flex; align-items: center; justify-content: center;">
+                            <button class="button"><i class="fa-solid fa-pizza-slice"></i> DataPizza</button>
+                        </a>
+                        <!-- <button class="button"><i class="fa-solid fa-pizza-slice"></i> DataPizza</button> -->
+                      </div>
+                       <div class="button-container-2">
+                        <div class="button2">
+                            <div class="btn2">TechFolio</div>
+                        </div>
+                      </div> 
+                </div>
+
+
+            </div>
+
             
-            <div class="card">
-                <div class="card-title">Fullstack experience</div>
-                <div class="card-text">
-                    I can use Python (Flask), Java (Spring) or .NET C# to build Desktop app and WebApps.
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-title">Operative Systems</div>
-                <div class="card-text">
-                    I am comfortable using major operating systems such as
-                    Windows, macOS, and Linux.
-                </div>
-            </div>     
-        </div>
 
-        <section class="section-skills section-works">
-            <div class="section-title"><strong>.works</strong></div>
-            <div class="section-text">
-                If you want to see my recent project and works visit my <a style="color: gray; text-decoration: none;" href="https://github.com/mik3sw"><i class="fa-brands fa-github"></i> GitHub profile</a>
+            <div class="about-card">
+              <div class="card-text">
+                I'm 22, based in Italy, Milan. I build websites and desktop apps.<br>
+                Interested in image processing, machine learning and AI.<br>
+                Graduated at University of Milano Bicocca, IT Information (Bachelor's degree).<br>
+                I'm currently studying for my Master in Computer Science.
+                
+              </div>
+              <a href="files/CVMicheleAngeloMarcucci.pdf" class="hoverable">
+                <button class="button3">Resume</button>
+              </a>
+              
+              
+
             </div>
 
-            <div class="worklist">
-                <div class="workitem">
-                    <div class="number">1.</div>
-                    <div class="text">
-                        <div class="title">
-                            <strong>
-                                OneClick
-                            </strong>
-                        </div>
-                        <div class="subtitle">
-                            macOS Utility menubar app 🚀<br>
-                            Written in Swift and SwiftUI for macOS Monterey and Apple Silicon
-                        </div>
-                        <div class="link">
-                            <a style="color: gray; text-decoration: none;" href="https://github.com/mik3sw/OneClick">
-                                GitHub <i class="fa-solid fa-link"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="workitem">
-                    <div class="number">2.</div>
-                    <div class="text">
-                        <div class="title">
-                            <strong>
-                                Human Skin Classifier
-                            </strong>
-                        </div>
-                        <div class="subtitle">
-                            Human Skin Detection (invisible man project) using OpenCV and a classifier.
-                            Written in Python for Windows, macOS and Linux.
-                        </div>
-                        <div class="link">
-                            <a style="color: gray; text-decoration: none;" href="https://github.com/mik3sw/SkinDetection">
-                                GitHub <i class="fa-solid fa-link"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="workitem">
-                    <div class="number">3.</div>
-                    <div class="text">
-                        <div class="title">
-                            <strong>
-                                Telegram Bot
-                            </strong>
-                        </div>
-                        <div class="subtitle">
-                            Telegram bots for group/community management and chatbot.
-                            Written in Python using python-telegram-bot API.
-                        </div>
-                        <div class="link">
-                            <a style="color: gray; text-decoration: none;" href="https://github.com/mik3sw/GoogleAssistantBot">
-                                GitHub <i class="fa-solid fa-link"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
+            
         </section>
 
-        <div class="worktree" style="display:none">
-            <div id="file-tree">
-                <button class="dir button-folder">
-                    <i class="fa fa-caret-right" aria-hidden="true"></i>
-                    <i class="fa fa-folder" aria-hidden="true"></i>Home
-                </button>
-                <div class="indent">
-                    <button class="dir button-folder">
-                        <i class="fa fa-caret-right" aria-hidden="true"></i>
-                        <i class="fa fa-folder" aria-hidden="true"></i>Cool_projects
-                    </button>
-                    <div class="indent">
-                        <button class="file button-folder" onclick="showPrj('OneClick')">
-                            <i class="fa-solid fa-file-code"></i> OneClick.xcodeprj
-                        </button>
-                        <button class="file button-folder" onclick="showPrj('SkinDetection')">
-                            <i class="fa-brands fa-python"></i> HumanSkinClassifier.py
-                        </button>
-                        <button class="file button-folder" onclick="showPrj('TgBot')">
-                            <i class="fa-solid fa-robot"></i> TelegramBot.py
-                        </button>
+        <section class="works" id="skills">
+            <div class="skill-text">
+                <a class="hoverable">
+                    Skills
+                </a>
+            </div>
+            <div class="skills-grid">
+                <div class="skills-card">
+                    <div class="button4">Programming</div>
+                    <div class="skill-card-text">
+                        I possess a versatile skill set to tackle diverse programming challenges.
+                        The main languages I use for work and personal projects are:
+                        <ul>
+                            <li>Python</li>
+                            <li>C#</li>
+                            <li>JavaScript</li>
+                            <li>Java</li>
+                        </ul>
                     </div>
-                    <button class="dir button-folder">
-                        <i class="fa fa-caret-right" aria-hidden="true"></i>
-                        <i class="fa fa-folder" aria-hidden="true"></i>ItWasOnTheDesktop
-                    </button>
-                    <div class="indent">
-                        <button class="file button-folder">
-                            <i class="fa fa-file" aria-hidden="true"></i>index.js
-                        </button>
-                    </div>
-                    <button class="dir button-folder">
-                        <i class="fa fa-caret-right" aria-hidden="true"></i>
-                        <i class="fa fa-folder" aria-hidden="true"></i>HOMEWORK
-                    </button>
-                    <div class="indent">
-                        <button class="dir button-folder">
-                            <i class="fa fa-caret-right" aria-hidden="true"></i>
-                            <i class="fa fa-folder" aria-hidden="true"></i>Documents
-                        </button>
-                        <div class="indent">
-                            <button class="file button-folder">
-                                <i class="fa fa-file" aria-hidden="true"></i>jquery.js
-                            </button>
-                        </div>
-                        <button class="file button-folder">
-                            <i class="fa fa-file" aria-hidden="true"></i>project.js
-                        </button>
-                    </div>
-                    <button class="file button-folder">
-                        <i class="fa fa-file" aria-hidden="true"></i>README.md
-                    </button>
                 </div>
+
+                <div class="skills-card">
+                    <div class="button4">Designing</div>
+                    <div class="skill-card-text">
+                        By leveraging HTML, CSS, and JS, I create visually appealing and interactive app and website designs that captivate users.
+                    </div>
+                </div>
+
+                <div class="skills-card">
+                    <div class="button4">Fullstack</div>
+                    <div class="skill-card-text">
+                        As a fullstack developer, I excel in crafting end-to-end solutions, combining robust backend development with the creation of hybrid apps using MAUI.
+                    </div>
+                </div>
+
+                <div class="skills-card">
+                    <div class="button4">OS</div>
+                    <div class="skill-card-text">
+                        Equipped with extensive knowledge of various operating systems, I ensure seamless functionality across different platforms, maximizing user accessibility and satisfaction.
+                    </div>
+                </div>
+                
             </div>
 
-            <div class="project-view">
-                <div id="OneClick" style="display:none">
-                    <div class="prj-card">
-                        <div class="card-image">
-                            <img class="cardimg" src="https://github.com/mik3sw/OneClick/raw/main/imgs/customTogglesExample.png" width="100%">
-                        </div>
-                        <div class="cardtitle">OneClick</div>
-                        <div class="cardtext">
-                            macOS Utility menubar app 🚀
-                            Written in Swift and SwiftUI for macOS Monterey and Apple Silicon
-                        </div>
-                    </div>
-                </div>
-                <div id="SkinDetection" style="display:none">
-                    <div class="prj-card">
-                        <div class="cardimg"></div>
-                        <div class="card-title">Human Skin Classifier</div>
-                        <div class="card-text"></div>
-                    </div>
-                </div>
-                <div id="TgBot" style="display:none">
-                    <div class="prj-card">
-                        <div class="cardimg"></div>
-                        <div class="card-title">Telegram Bot</div>
-                        <div class="card-text"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <section class="section-contacts">
-            <div class="section-title"><strong>.contacts</strong></div>
-            <div class="section-text">
-                Let's get in touch!<br> 
-                You can contact me via <a style="color: gray; text-decoration: none;" href="mailto:michymarcucci@gmail.com">michymarcucci@gmail.com</a><br>
-                Don't forget to add me on <a style="color: gray; text-decoration: none;" href="https://www.linkedin.com/in/michele-angelo-m-495462159/">LinkedIn <i class="fa-brands fa-linkedin"></i></a><br>
-            </div>
         </section>
+
+        <div class="works">
+            <div class="footer">
+                <!-- <div class="footer-text">
+                  Michele Marcucci
+                </div>
+                <div class="footer-subtext">
+                  Software Developer
+                </div> -->
+                <div class="footer-icons">
+                  <a href="www.linkedin.com/in/michele-angelo-marcucci" style="text-decoration: none; color: white">
+                    <div>
+                      <i class="fa-brands fa-linkedin"></i>
+                    </div>
+                  </a>
+                  <a href="https://twitter.com/mikeevazowski" style="text-decoration: none; color: white">
+                    <div>
+                      <i class="fa-brands fa-twitter"></i>
+                    </div>
+                  </a>
+                  <a href="https://instagram.com/michelemarcucci_" style="text-decoration: none; color: white">
+                    <div>
+                      <i class="fa-brands fa-instagram"></i>
+                    </div>
+                  </a>
+                </div>
+              </div>
+        </div>
         
-        <footer id="footer">
-            Built with ❤️ by <a style="color: gray; text-decoration: none;">Michele Marcucci</a>
-        </footer>
+
         
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <script src="assets/js/script.js"></script>
+
+        
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js'></script>
+        <script src="JS/script.js"></script>
+        <!-- partial -->
+        
+
+
     </body>
 </html>

@@ -1,0 +1,234 @@
+/* Stili specifici per schermi di dimensioni ridotte */
+@media (max-width: 1000px) {
+
+    .mobileonly{
+        display: block;
+    }
+
+    .header{
+        margin-top: 0px;
+    }
+
+    .subtitle-container{
+        display: block;
+        /* align-items: center; */
+        /* justify-content: space-between; */
+
+        width: 100%;
+        margin-top: 20%;
+    }
+    .subtitle1{
+        font-size: 70px;
+        margin-left: 2.5%;
+        line-height: 75px !important;
+    }
+    .subtitle2{
+        margin-top: 10%;
+        font-size: 70px;
+        /* margin-right: 2.5%; */
+        margin-left: 2.5%;
+        line-height: 75px !important;
+    }
+    
+    .subsubtitle{
+        font-size: 50px;
+        line-height: 55px !important;
+        margin-top:5%;
+    }
+    
+    .navbar{
+        background-color: rgb(255, 255, 255);
+        color: rgb(102, 102, 102);
+        border-radius: 6rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 15px;
+    }
+    
+    .navbar-logo{
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background-color: black;
+        
+    }
+    
+    .selected{
+        color: black !important;
+    }
+    
+    .navbar-item{
+        margin-right: 20px;
+        margin-left: 20px;
+        font-size: 45px;
+        transition: all 0.5s;
+    }
+    
+    .navbar-item:hover{
+        transform: scale(1.1);
+    }
+    
+    .navbar-item a:hover{
+        color: black !important;
+    }
+    
+    .navbar-item a{
+        text-decoration: none;
+        color: rgb(102, 102, 102);
+    }
+    
+    .contact-btn{
+        border-radius: 6rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 15px;
+        margin-left: 10px;
+        font-size: 45px;
+        padding-right: 50px;
+        padding-left: 50px;
+    
+        transition: transform 0.2s ease-in-out;
+        cursor: pointer;
+    }
+    
+    .contact-btn:hover{
+        animation: bounce 0.7s;
+    }
+
+    .title{
+        display: flex;
+
+        font-size: 150px;
+
+    }
+    .subtitle{
+
+        font-size: 100px;
+    }
+    
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(40%, 1fr));
+        gap: 2.5%;
+        width: 95%;
+        
+        
+      }
+      
+      .card {
+        z-index: 0;
+        border-radius: 40px;
+        transition: all 0.5s;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .card:nth-child(3) {
+        grid-column: span 2; /* Espandi la terza card per occupare 2 colonne */
+        justify-self: center; /* Posiziona la terza card al centro */
+      }
+
+      .button-container {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: bottom 0.3s;
+      }
+
+      
+
+      .button {
+        background-color: #ffffff;
+        color: #000;
+        width: 80%;
+        padding: 20px 30px;
+        border: none;
+        cursor: pointer;
+        transform: translateY(0px);
+        transition: transform 0.3s;
+        margin-bottom: 200px;
+        border-radius: 4rem;
+        font-size: 50px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        display: none;
+    
+      }
+
+      
+      .card-text{
+        font-size: 60px;
+        margin: 80px;
+        
+    }
+
+    .button3{
+        font-size: 60px;
+        padding: 30px 60px;
+        border-radius: 6rem;
+    }
+
+    .footer-text{
+        font-size: 70px;
+        font-weight: 700;
+        margin-top: 100px;
+      }
+      .footer{
+        width: 95%;
+      }
+      
+      .footer-icons{
+        width: 70%;
+        font-size: 70px;
+      }
+
+      .about-card{
+        width: 95%;
+      }
+
+      .skills-grid{
+        width: 95%;
+      }
+
+      .work-card{
+        width: 95%;
+      }
+
+      .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(60%, 1fr));
+        gap: 40px;
+        width: 95%;
+        margin-top: 100px;
+      }
+
+      .button4 {
+        padding: 20px 30px;
+        border-radius: 2.5rem;
+        font-size: 40px;
+        margin: 40px;
+        
+      }
+    
+      .skill-card-text{
+        font-size: 50px;
+        margin: 40px;
+        margin-top: 0px;
+    }
+
+    .cursor{
+        display: none;
+    }
+
+    .skill-text{
+        margin-top: 200px;
+    }
+      
+}
