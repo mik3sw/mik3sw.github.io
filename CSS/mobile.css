@@ -110,8 +110,14 @@
     
 
     .grid-container {
-        display: grid;
+        /* display: grid;
         grid-template-columns: repeat(auto-fit, minmax(40%, 1fr));
+        gap: 2.5%;
+        width: 95%; */
+
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
         gap: 2.5%;
         width: 95%;
         
@@ -124,12 +130,16 @@
         transition: all 0.5s;
         position: relative;
         overflow: hidden;
+        flex-basis: calc(50% - 20px);
       }
 
       .card:nth-child(3) {
-        grid-column: span 2; /* Espandi la terza card per occupare 2 colonne */
-        justify-self: center; /* Posiziona la terza card al centro */
-      }
+        /* grid-column: span 2; */
+        justify-self: center;  
+        flex-basis: calc(100% - 20px);
+        margin-left: auto;
+        margin-right: auto;
+      } 
 
       .button-container {
         position: absolute;
