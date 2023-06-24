@@ -275,9 +275,7 @@ html, body{
     transition: bottom 0.3s;
   }
   
-  .card:hover .button-container {
-    bottom: 0;
-  }
+  
   
   .button {
     background-color: white;
@@ -295,12 +293,23 @@ html, body{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
   
+  .card:hover .button-container {
+    bottom: 0;
+  }
   .card:hover .button {
     transform: translateY(0);
     animation: bounce2 1s;
     animation-fill-mode: both;
   }
 
+  .card2:hover .button-container {
+    bottom: 0;
+  }
+  .card2:hover .button {
+    transform: translateY(0);
+    animation: bounce2 1s;
+    animation-fill-mode: both;
+  }
 
   @keyframes bounce2 {
     0% {
@@ -364,6 +373,15 @@ html, body{
     animation-fill-mode: both;
   }
 
+  .card2:hover .button-container-2 {
+    top: 0;
+  }
+
+  .card2:hover .button2 {
+    transform: translateY(0);
+    animation: bounce3 1s;
+    animation-fill-mode: both;
+  }
 
   @keyframes bounce3 {
     0% {
