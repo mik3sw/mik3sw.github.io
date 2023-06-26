@@ -78,7 +78,7 @@ html, body{
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 15px;
+    padding: 10px;
     margin-left:2.5%;
     box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.096), 0 12px 26px 0 rgba(0, 0, 0, 0.103);
 }
@@ -158,20 +158,24 @@ html, body{
 
 .header{
     height: 100vh;
-    display: flex;
+    /* display: flex;
     justify-content: center;
     flex-direction: column;
-    /* text-align: center; */
+    text-align: center; */
     background-color: var(--background);
-    margin-top: 100px;
+    /* margin-top: 300px; */
     
 }
 
+.spacer{
+  height: 300px;
+}
 
 
 .title{
     font-size: 150px;
     font-weight: 400;
+    /* margin-top: 300px; */
     /* text-align: center; */
     /* width: 100%; */
     line-height: 130px !important;
