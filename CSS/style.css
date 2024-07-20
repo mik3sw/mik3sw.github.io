@@ -49,7 +49,7 @@ html, body{
     /* font-family: 'Roboto', sans-serif; */
     font-family: 'Inter', sans-serif;
     scroll-behavior: smooth;
-    cursor: none;
+    /* cursor: none; */
     
     /* font-family: 'Space Grotesk', sans-serif; */
 }
