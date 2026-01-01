@@ -284,11 +284,13 @@ export const Navbar02 = React.forwardRef<HTMLElement, Navbar02Props>(
                               <ul>
                                 {link.items?.map((item, itemIndex) => (
                                   <li key={itemIndex}>
-                                    <button
-                                      className="flex w-full items-center rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground cursor-pointer no-underline"
-                                    >
-                                      {item.label}
-                                    </button>
+                                    <a href={item.href}>
+                                      <button
+                                        className="flex w-full items-center rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground cursor-pointer no-underline"
+                                      >
+                                        {item.label}
+                                      </button>
+                                    </a>
                                   </li>
                                 ))}
                               </ul>
