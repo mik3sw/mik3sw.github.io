@@ -5,6 +5,7 @@ import { useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Download } from 'lucide-react'
 import OrbitalCircles from "./ui/orbital-circle";
+import { SOCIALS } from "@/lib/config/constants";
 
 
 export default function TechStack() {
@@ -31,7 +32,7 @@ export default function TechStack() {
 
   return (
     <section ref={sectionRef} id="tech-stack" className='py-8 overflow-hidden mb-30'>
-      <div className="flex items-center justify-center mx-auto flex-col-reverse md:flex-row lg:flex-row md:w-[80%] lg:w-[80%] w-[90%] max-w-7xl">
+      <div className="flex items-center justify-center mx-auto flex-col-reverse lg:flex-row gap-6 lg:gap-10 md:w-[80%] lg:w-[80%] w-[90%] max-w-7xl">
         <motion.div
           className='flex-1'
           variants={fadeInUp}
@@ -71,7 +72,7 @@ export default function TechStack() {
               transition={{ delay: 0.5 }}
             >
               <Button variant='outline' className='rounded-lg text-base shadow-none has-[>svg]:px-6' size='lg' asChild>
-                <a href='https://www.linkedin.com/in/michele-angelo-marcucci/overlay/1767093719439/single-media-viewer/?profileId=ACoAACX59jEBhAPYj2ps2wksT7dUyJ0XUSN2iiA' target="_blank" rel="noopener noreferrer">
+                <a href={SOCIALS.cv} target="_blank" rel="noopener noreferrer">
                   Download CV
                   <Download />
                 </a>

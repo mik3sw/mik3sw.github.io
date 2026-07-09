@@ -4,6 +4,7 @@ import "./globals.css";
 import { Navbar02 } from '@/components/ui/shadcn-io/navbar-02';
 import { ThemeProvider } from "@/components/theme-provider"
 import Footer from "@/components/ui/footer-component";
+import { SOCIALS } from "@/lib/config/constants";
 
 
 
@@ -17,9 +18,76 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const siteUrl = "https://mik3sw.github.io";
+const description =
+  "Personal portfolio of Michele Angelo Marcucci, AI Software Engineer based in Milan specializing in AI pipeline integrations, web and desktop applications.";
+
 export const metadata: Metadata = {
-  title: "Michele Angelo Marcucci - AI Software Engineer",
-  description: "Personal portfolio of Michele Angelo Marcucci, AI Software Engineer specializing in cutting-edge AI solutions and software development.",
+  metadataBase: new URL(siteUrl),
+  title: "Michele Angelo Marcucci — AI Software Engineer",
+  description,
+  keywords: [
+    "Michele Angelo Marcucci",
+    "AI Software Engineer",
+    "Full-stack developer",
+    "Machine Learning",
+    "Milan",
+  ],
+  authors: [{ name: "Michele Angelo Marcucci" }],
+  alternates: { canonical: "/" },
+  openGraph: {
+    type: "website",
+    url: siteUrl,
+    title: "Michele Angelo Marcucci — AI Software Engineer",
+    description,
+    siteName: "Michele Angelo Marcucci",
+    images: [
+      {
+        url: "/og.png",
+        width: 1200,
+        height: 630,
+        alt: "Michele Angelo Marcucci — AI Software Engineer",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Michele Angelo Marcucci — AI Software Engineer",
+    description,
+    images: ["/og.png"],
+  },
+};
+
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Michele Angelo Marcucci",
+  alternateName: "Mike",
+  url: siteUrl,
+  jobTitle: "AI Software Engineer",
+  description,
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Milan",
+    addressCountry: "IT",
+  },
+  alumniOf: {
+    "@type": "CollegeOrUniversity",
+    name: "University of Milano-Bicocca",
+  },
+  knowsAbout: [
+    "Software Engineering",
+    "Full-stack Development",
+    "Clean Architecture",
+    "REST APIs",
+    "Docker",
+    "Artificial Intelligence",
+    "Machine Learning",
+    "Retrieval-Augmented Generation",
+    "LLM Fine-tuning",
+    "Data Extraction",
+  ],
+  sameAs: [SOCIALS.github, SOCIALS.linkedin, SOCIALS.huggingface],
 };
 
 export default function RootLayout({
@@ -32,25 +100,22 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+        />
         <ThemeProvider
             attribute="class"
             defaultTheme="system"
             enableSystem
             disableTransitionOnChange
           >
-        {/* Container per la navbar */}
-        {/* <div className="fixed left-0 right-0 z-50 flex">
-          <div className="bg-white px-6 py-3">
-            <NavBar />
-          </div>
-        </div> */}
         <div className="fixed left-0 right-0 z-50 flex">
           <div className="relative w-full bg-background">
             <Navbar02 className="bg-background"/>
           </div>
         </div>
 
-        {/* Spazio sotto la navbar */}
         <div>
           {children}
         </div>

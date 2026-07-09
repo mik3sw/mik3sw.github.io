@@ -37,7 +37,8 @@ const SkeletonAI = () => {
     animate: { width: "100%", transition: { duration: 0.2 } },
     hover: { width: ["0%", "100%"], transition: { duration: 2 } },
   };
-  const arr = new Array(6).fill(0);
+  // Fixed widths keep server and client render identical (no hydration mismatch).
+  const widths = [72, 55, 88, 63, 94, 48];
   return (
     <motion.div
       initial="initial"
@@ -49,12 +50,12 @@ const SkeletonAI = () => {
         <span>Training Epoch: 50/100</span>
         <span>Loss: 0.024</span>
       </div>
-      {arr.map((_, i) => (
+      {widths.map((w, i) => (
         <motion.div
           key={"skeleton-ai-" + i}
           variants={variants}
           style={{
-            maxWidth: Math.random() * (100 - 40) + 40 + "%",
+            maxWidth: w + "%",
           }}
           className={cn(
             "flex flex-row rounded-full border border-neutral-100 dark:border-white/[0.2] p-2 items-center space-x-2 w-full h-4",

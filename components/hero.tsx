@@ -1,22 +1,49 @@
 "use client";
 
 import { motion, Variants } from "framer-motion";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
 import { Button } from "@/components/ui/button";
-import { COMPANY_INFO } from "@/lib/config/constants";
-import { ArrowUpRightIcon, SquareTerminal, UserIcon, UsersIcon } from "lucide-react";
-import {
-  Terminal,
-  TypingAnimation,
-  AnimatedSpan,
-} from '@/components/ui/shadcn-io/terminal';
+import { COMPANY_INFO, SOCIALS } from "@/lib/config/constants";
+import { ArrowUpRightIcon, SquareTerminal } from "lucide-react";
 import { Status, StatusIndicator, StatusLabel } from '@/components/ui/shadcn-io/status';
 import { Magnetic } from "./ui/shadcn-io/magnetic";
-import { useState } from "react";
+import { useRef, useState } from "react";
 
+gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 export default function Hero() {
 
   const [hover, setHover] = useState(false)
+  const heroRef = useRef<HTMLDivElement>(null);
+
+  useGSAP(
+    () => {
+      // Parallax: blob and illustration drift at different speeds on scroll.
+      gsap.to("[data-hero-blob]", {
+        yPercent: 30,
+        ease: "none",
+        scrollTrigger: {
+          trigger: heroRef.current,
+          start: "top top",
+          end: "bottom top",
+          scrub: true,
+        },
+      });
+      gsap.to("[data-hero-art]", {
+        yPercent: -12,
+        ease: "none",
+        scrollTrigger: {
+          trigger: heroRef.current,
+          start: "top top",
+          end: "bottom top",
+          scrub: true,
+        },
+      });
+    },
+    { scope: heroRef }
+  );
   // ✅ Tip explicito
   const container: Variants = {
     hidden: { opacity: 0 },
@@ -38,7 +65,7 @@ export default function Hero() {
   };
 
   return (
-    <div>
+    <div ref={heroRef}>
       <div className="w-full h-screen flex flex-col items-center">
         <motion.div
           className="md:w-[80%] lg:w-[80%] w-[90%] flex justify-center items-center h-screen gap-7 max-w-7xl"
@@ -66,13 +93,13 @@ export default function Hero() {
                 variants={item}
                 className="scroll-m-10 md:text-6xl lg:text-6xl text-5xl font-bold tracking-tight text-balance max-w-3xl"
               >
-                Hi, I'm Mike!
+                {COMPANY_INFO.title1}
               </motion.h1>
               <motion.h1
                 variants={item}
                 className="scroll-m-10 md:text-6xl lg:text-6xl text-5xl font-bold tracking-tight text-balance max-w-3xl"
               >
-                AI Software Engineer.
+                {COMPANY_INFO.title2}
               </motion.h1>
             </div>
            
@@ -81,14 +108,12 @@ export default function Hero() {
               variants={item}
               className="scroll-m-10 text-xl font-normal tracking-tight text-balance text-muted-foreground max-w-2xl"
             >
-              Full-stack developer based in Milan, Italy, specialized in complex AI pipeline integrations. I build web and desktop applications and have a strong interest in image processing, machine learning, and AI.
-              <br />
-              Bachelor’s degree in Information Technology from the University of Milano-Bicocca.
+              {COMPANY_INFO.subtitle}
             </motion.span>
 
             <motion.div variants={item}>
               <Magnetic>
-                <a href="https://www.linkedin.com/in/michele-angelo-marcucci/" target="_blank" rel="noopener noreferrer cursor-pointer">
+                <a href={SOCIALS.linkedin} target="_blank" rel="noopener noreferrer">
                 <Button className="w-fit text-center font-normal cursor-pointer" size="lg">
                   Contact Me <ArrowUpRightIcon />
                 </Button>
@@ -104,16 +129,19 @@ export default function Hero() {
           onHoverStart={() => setHover(true)}
           onHoverEnd={() => setHover(false)}
         >
-          {/* Cerchio sfumato - versione light */}
+          {/* Cerchio sfumato di sfondo (parallax) */}
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-            <div className="w-2/4 aspect-square rounded-full bg-gradient-to-r from-pink-500 to-violet-500 blur-3xl" />
+            <div
+              data-hero-blob
+              className="w-2/4 aspect-square rounded-full bg-gradient-to-r from-pink-500 to-violet-500 blur-3xl"
+            />
           </div>
-          
-          
-          {/* Immagine sopra lo sfondo */}
+
+          {/* Illustrazione sopra lo sfondo (parallax) */}
           <img
+            data-hero-art
             src={hover ? "./hero_peep2_hover.svg" : "./hero_peep2.svg"}
-            alt="Descrizione immagine"
+            alt="Illustration of Michele Marcucci working at a computer"
             className="w-full h-full relative z-10 dark:shadow-lg dark:shadow-black/40 rounded-2xl"
           />
         </motion.div>

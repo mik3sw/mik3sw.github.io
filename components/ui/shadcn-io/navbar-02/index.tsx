@@ -24,7 +24,7 @@ import { cn } from '@/lib/utils';
 import type { ComponentProps } from 'react';
 import { ThemeToggleButton, useThemeTransition } from '../theme-toggle-button';
 import { useSettings } from '@/hooks/useSettings';
-import { COMPANY_INFO } from '@/lib/config/constants';
+import { COMPANY_INFO, SOCIALS } from '@/lib/config/constants';
 import { Logo } from '@/components/ui/logo';
 
 
@@ -135,13 +135,7 @@ const defaultNavigationLinks: Navbar02NavItem[] = [
   },
   {
     label: 'Projects',
-    submenu: true,
-    type: 'icon',
-    items: [
-      { href: 'https://www.redixlabs.ai/', label: 'AI Softwares', icon: 'BriefcaseBusinessIcon', description: 'Efficient solutions with cutting edge AI technologies'},
-      { href: 'https://huggingface.co/collections/ReDiX/italian-datasets', label: 'Datasets', icon: 'ShredderIcon', description: 'Creating and managing datasets for AI model training and fine-tuning' },
-      { href: '#', label: 'Coming Soon', icon: 'BrainCircuitIcon', description: 'Local LLMs, RAG and MCP integration. More info soon!' },
-    ],
+    href: '#projects',
   }
 ];
 
@@ -153,9 +147,9 @@ export const Navbar02 = React.forwardRef<HTMLElement, Navbar02Props>(
       logoHref = '#',
       navigationLinks = defaultNavigationLinks,
       signInText = 'Contact me',
-      signInHref = 'https://www.linkedin.com/in/michele-angelo-marcucci/',
+      signInHref = SOCIALS.linkedin,
       ctaText = 'Contact me',
-      ctaHref = 'https://www.linkedin.com/in/michele-angelo-marcucci/',
+      ctaHref = SOCIALS.linkedin,
       onSignInClick,
       onCtaClick,
       ...props
@@ -438,12 +432,10 @@ export const Navbar02 = React.forwardRef<HTMLElement, Navbar02Props>(
               start="top-right"
               className='cursor-pointer'
             />
-            <a href="https://www.linkedin.com/in/michele-angelo-marcucci/" target="_blank">
+            <a href={ctaHref} target="_blank" rel="noopener noreferrer">
               <Button
                 size="sm"
                 className="text-sm font-medium px-4 h-9 rounded-md shadow-sm cursor-pointer"
-                
-                
               >
                 {ctaText}
               </Button>
