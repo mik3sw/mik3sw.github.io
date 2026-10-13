@@ -12,11 +12,13 @@ const EASE = [0.16, 1, 0.3, 1] as const;
 type MobileMenuProps = {
   open: boolean;
   activeHref: string | null;
+  /** Off the home page the links navigate back to it instead of scrolling. */
+  onHome: boolean;
   onClose: () => void;
 };
 
 /** Full-screen menu below md. Sits under the header so the toggle stays in place. */
-export function MobileMenu({ open, activeHref, onClose }: MobileMenuProps) {
+export function MobileMenu({ open, activeHref, onHome, onClose }: MobileMenuProps) {
   const panel = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -75,9 +77,10 @@ export function MobileMenu({ open, activeHref, onClose }: MobileMenuProps) {
                     transition={{ duration: 0.6, delay: 0.05 + i * 0.05, ease: EASE }}
                   >
                     <a
-                      href={link.href}
+                      href={onHome ? link.href : `/${link.href}`}
                       aria-current={active ? "location" : undefined}
                       onClick={(e) => {
+                        if (!onHome) return onClose();
                         e.preventDefault();
                         go(link.href);
                       }}

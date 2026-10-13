@@ -4,6 +4,8 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { MotionProvider } from "@/components/motion-provider";
 import { SiteHeader } from "@/components/site-header";
+import { Analytics } from "@/components/analytics";
+import { CookieBanner } from "@/components/cookie-banner";
 import Footer from "@/components/ui/footer-component";
 import { SOCIALS } from "@/lib/config/constants";
 
@@ -113,6 +115,8 @@ export default function RootLayout({
             <SiteHeader />
             {children}
             <Footer />
+            <CookieBanner />
+            <Analytics />
           </MotionProvider>
         </ThemeProvider>
       </body>

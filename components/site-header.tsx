@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
+import { usePathname } from "next/navigation";
 import { useMotionValueEvent, useScroll } from "motion/react";
 import { COMPANY_INFO } from "@/lib/config/constants";
 import { cn } from "@/lib/utils";
@@ -13,6 +14,9 @@ export function SiteHeader() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeHref, setActiveHref] = useState<string | null>(null);
   const menuButton = useRef<HTMLButtonElement>(null);
+  // Section links are in-page anchors on the home page; elsewhere they lead back to it.
+  const onHome = usePathname() === "/";
+  const base = onHome ? "" : "/";
 
   // Only flips state when the threshold is crossed, not on every frame.
   const { scrollY } = useScroll();
@@ -57,7 +61,7 @@ export function SiteHeader() {
       >
         <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-6 px-5 md:px-8">
           <a
-            href="#top"
+            href={onHome ? "#top" : "/"}
             onClick={() => menuOpen && setMenuOpen(false)}
             className="text-[15px] font-semibold tracking-tight"
           >
@@ -71,7 +75,7 @@ export function SiteHeader() {
                 return (
                   <li key={link.href}>
                     <a
-                      href={link.href}
+                      href={base + link.href}
                       aria-current={active ? "location" : undefined}
                       className={cn(
                         "relative inline-flex h-10 items-center px-3 text-sm transition-colors hover:text-foreground",
@@ -96,7 +100,7 @@ export function SiteHeader() {
           <div className="flex items-center gap-1">
             <ThemeToggle />
             <a
-              href="#contact"
+              href={base + "#contact"}
               className="ml-2 hidden h-10 items-center rounded-full bg-foreground px-5 text-sm font-medium text-background transition-transform hover:-translate-y-px active:scale-[0.98] md:inline-flex"
             >
               Contact me
@@ -115,7 +119,7 @@ export function SiteHeader() {
         </div>
       </header>
 
-      <MobileMenu open={menuOpen} activeHref={activeHref} onClose={closeMenu} />
+      <MobileMenu open={menuOpen} activeHref={activeHref} onHome={onHome} onClose={closeMenu} />
     </>
   );
 }

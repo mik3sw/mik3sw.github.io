@@ -48,7 +48,7 @@
   tiles and icon tiles use rounded-xl; state markers are circles. Nothing else
   gets a radius.
 
-  Layers: header z-50, mobile menu z-40.
+  Layers: cookie banner z-60, header z-50, mobile menu z-40.
 */
 :root {
   --radius: 0.75rem;
@@ -139,6 +139,55 @@
     clip-path: circle(var(--vt-r) at var(--vt-x) var(--vt-y));
     filter: blur(0);
   }
+}
+
+/*
+  Long-form text on the privacy and cookie policies. Rules target direct
+  children only, so components placed inside (the cookie cards) keep their
+  own utility styling: these rules are unlayered and would otherwise win.
+*/
+.legal {
+  color: var(--muted-foreground);
+  line-height: 1.7;
+}
+.legal > h2 {
+  margin-top: 3.5rem;
+  color: var(--foreground);
+  font-size: 1.5rem;
+  line-height: 1.25;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+.legal > h3 {
+  margin-top: 2rem;
+  color: var(--foreground);
+  font-size: 1.0625rem;
+  font-weight: 600;
+}
+.legal > p,
+.legal > ul:not(.not-legal) {
+  margin-top: 1rem;
+}
+.legal > ul:not(.not-legal) {
+  padding-left: 1.25rem;
+  list-style: disc;
+}
+.legal > ul:not(.not-legal) > li + li {
+  margin-top: 0.5rem;
+}
+.legal > ul:not(.not-legal) > li::marker {
+  color: var(--signal);
+}
+.legal strong {
+  color: var(--foreground);
+  font-weight: 500;
+}
+.legal a {
+  color: var(--foreground);
+  text-decoration: underline;
+  text-decoration-color: var(--signal);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
 }
 
 /* Dotted texture for tiles that have no screenshot. */

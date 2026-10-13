@@ -17,6 +17,9 @@ export const HERO_ROLES = ["AI pipelines.", "desktop apps.", "web platforms."] a
 
 export const EMAIL = "michymarcucci@gmail.com";
 
+/** Google Analytics 4. Loaded only after the visitor accepts analytics cookies. */
+export const GA_MEASUREMENT_ID = "G-D07Y36REJB";
+
 export const SOCIALS = {
   github: "https://github.com/mik3sw",
   huggingface: "https://huggingface.co/mik3ml",
