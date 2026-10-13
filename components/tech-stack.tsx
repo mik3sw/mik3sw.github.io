@@ -1,90 +1,109 @@
-"use client";
-
-import { motion, Variants, useInView } from "framer-motion";
-import { useRef } from "react";
-import { Button } from "@/components/ui/button";
-import { Download } from 'lucide-react'
-import OrbitalCircles from "./ui/orbital-circle";
+import { ArrowUpRight } from "@phosphor-icons/react/dist/ssr";
+import {
+  SiDocker,
+  SiHuggingface,
+  SiNextdotjs,
+  SiOllama,
+  SiOpencv,
+  SiPython,
+  SiPytorch,
+  SiReact,
+  SiSharp,
+  SiSwift,
+  SiTailwindcss,
+  SiTypescript,
+  type IconType,
+} from "@icons-pack/react-simple-icons";
 import { SOCIALS } from "@/lib/config/constants";
+import { AnimatedHeading } from "./motion/animated-heading";
+import { Reveal } from "./reveal";
+import { TechMarquee } from "./tech-marquee";
 
+type Tech = { Icon: IconType; label: string };
+type Group = { title: string; note: string; items: Tech[] };
+
+const GROUPS: Group[] = [
+  {
+    title: "Languages",
+    note: "Python and TypeScript every day, Swift and C# when the platform needs it.",
+    items: [
+      { Icon: SiPython, label: "Python" },
+      { Icon: SiTypescript, label: "TypeScript" },
+      { Icon: SiSwift, label: "Swift" },
+      { Icon: SiSharp, label: "C#" },
+    ],
+  },
+  {
+    title: "AI and data",
+    note: "Training, fine-tuning and vision work, plus local models.",
+    items: [
+      { Icon: SiPytorch, label: "PyTorch" },
+      { Icon: SiHuggingface, label: "Hugging Face" },
+      { Icon: SiOpencv, label: "OpenCV" },
+      { Icon: SiOllama, label: "Ollama" },
+    ],
+  },
+  {
+    title: "Web and shipping",
+    note: "Interfaces for the products, containers to run them.",
+    items: [
+      { Icon: SiReact, label: "React" },
+      { Icon: SiNextdotjs, label: "Next.js" },
+      { Icon: SiTailwindcss, label: "Tailwind CSS" },
+      { Icon: SiDocker, label: "Docker" },
+    ],
+  },
+];
 
 export default function TechStack() {
-  const sectionRef = useRef(null);
-  const isInView = useInView(sectionRef, { once: true, amount: 0.2 });
-
-  const fadeInLeft: Variants = {
-    hidden: { opacity: 0, x: -60 },
-    show: {
-      opacity: 1,
-      x: 0,
-      transition: { duration: 0.7, ease: "easeOut" },
-    },
-  };
-
-  const fadeInUp: Variants = {
-    hidden: { opacity: 0, y: 60 },
-    show: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.7, ease: "easeOut" },
-    },
-  };
-
   return (
-    <section ref={sectionRef} id="tech-stack" className='py-8 overflow-hidden mb-30'>
-      <div className="flex items-center justify-center mx-auto flex-col-reverse lg:flex-row gap-6 lg:gap-10 md:w-[80%] lg:w-[80%] w-[90%] max-w-7xl">
-        <motion.div
-          className='flex-1'
-          variants={fadeInUp}
-          initial="hidden"
-          animate={isInView ? "show" : "hidden"}
-        >
-          <OrbitalCircles />
-        </motion.div>
+    <section id="tech-stack" className="scroll-mt-20 overflow-x-clip py-24 md:py-32">
+      <div className="mx-auto max-w-7xl px-5 md:px-8">
+        <AnimatedHeading
+          text="The tools I reach for"
+          className="max-w-[16ch] text-5xl font-semibold tracking-[-0.04em] md:text-7xl"
+        />
+        <Reveal delay={0.2}>
+          <a
+            href={SOCIALS.cv}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group mt-8 inline-flex h-11 items-center gap-2 rounded-full border border-line px-5 text-sm font-medium transition-colors hover:border-foreground/40 active:scale-[0.98]"
+          >
+            View CV
+            <ArrowUpRight className="size-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+          </a>
+        </Reveal>
+      </div>
 
-        <div className='flex-1'>
-          {/* Header */}
-          <div className='mb-12 space-y-4 sm:mb-16 lg:mb-24'>
-            <motion.h2
-              className='text-2xl font-semibold md:text-3xl lg:text-4xl'
-              variants={fadeInLeft}
-              initial="hidden"
-              animate={isInView ? "show" : "hidden"}
-              transition={{ delay: 0.1 }}
-            >
-              My tech stack, your advantage.
-            </motion.h2>
+      {/* Full-bleed strip of what the tools are used for. */}
+      <div className="mt-16 border-y border-line py-8 md:mt-20 md:py-10">
+        <TechMarquee />
+      </div>
 
-            <motion.p
-              className='text-muted-foreground text-xl'
-              variants={fadeInLeft}
-              initial="hidden"
-              animate={isInView ? "show" : "hidden"}
-              transition={{ delay: 0.3 }}
-            >
-              Leveraging a diverse tech stack to deliver tailored solutions that drive success. From cutting-edge AI frameworks to robust web technologies, I harness the best tools to meet your unique needs. Let's build something exceptional together.
-            </motion.p>
-
-            <motion.div
-              variants={fadeInLeft}
-              initial="hidden"
-              animate={isInView ? "show" : "hidden"}
-              transition={{ delay: 0.5 }}
-            >
-              <Button variant='outline' className='rounded-lg text-base shadow-none has-[>svg]:px-6' size='lg' asChild>
-                <a href={SOCIALS.cv} target="_blank" rel="noopener noreferrer">
-                  Download CV
-                  <Download />
-                </a>
-              </Button>
-            </motion.div>
-          </div>
+      <div className="mx-auto max-w-7xl px-5 md:px-8">
+        {/* Asymmetric columns: the first group gets more room. < md: stacked. */}
+        <div className="mt-16 grid grid-cols-1 gap-12 md:mt-20 md:grid-cols-[1.25fr_1fr_1fr] md:gap-10">
+          {GROUPS.map((group, i) => (
+            <Reveal key={group.title} delay={i * 0.08}>
+              <h3 className="text-2xl font-semibold tracking-tight">{group.title}</h3>
+              <p className="mt-2 max-w-[34ch] text-muted-foreground">{group.note}</p>
+              <ul className="mt-8 grid grid-cols-2 gap-x-6 gap-y-6">
+                {group.items.map(({ Icon, label }) => (
+                  <li key={label} className="group flex items-center gap-3">
+                    <span className="grid size-11 shrink-0 place-items-center rounded-xl bg-surface transition-[background-color,translate,rotate] duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)] group-hover:-translate-y-1 group-hover:rotate-[-8deg] group-hover:bg-[color-mix(in_oklch,var(--signal)_18%,var(--surface))]">
+                      <Icon className="size-5" aria-hidden="true" />
+                    </span>
+                    <span className="text-[15px] font-medium">{label}</span>
+                  </li>
+                ))}
+              </ul>
+            </Reveal>
+          ))}
         </div>
-
-        
       </div>
     </section>
   );
 }
 
-export { TechStack }
+export { TechStack };

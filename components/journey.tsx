@@ -1,380 +1,124 @@
 "use client";
 
-import { useRef } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useGSAP } from "@gsap/react";
-import { ArrowUpRightIcon } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Magnetic } from "./ui/shadcn-io/magnetic";
-import { SOCIALS } from "@/lib/config/constants";
+import { useRef, useState } from "react";
+import {
+  AnimatePresence,
+  motion,
+  useMotionValueEvent,
+  useReducedMotion,
+  useScroll,
+  useSpring,
+} from "motion/react";
+import { PRINCIPLES } from "@/lib/config/constants";
 import { cn } from "@/lib/utils";
+import { AnimatedHeading } from "./motion/animated-heading";
+import { Reveal } from "./reveal";
 
-gsap.registerPlugin(ScrollTrigger, useGSAP);
-
-type Chapter = {
-  index: string;
-  title: string;
-  body: string;
-  tags: string[];
-  art: string;
-  accent: string;
-};
-
-const chapters: Chapter[] = [
-  {
-    index: "01",
-    title: "Full-stack, 360°",
-    body: "I design, build and ship software end to end — clean architecture, databases, REST APIs, frontends and Docker. From the first diagram all the way to production.",
-    tags: ["Clean Architecture", "REST APIs", "Databases", "Frontend", "Docker"],
-    art: "/peep_tech_stack.svg",
-    accent: "from-sky-500 to-blue-600",
-  },
-  {
-    index: "02",
-    title: "Built to optimize",
-    body: "Making software work is only the start — I make it efficient. Clean refactors, thoughtful performance work and pipelines engineered to scale.",
-    tags: ["Performance", "Refactoring", "Pipelines", "CI/CD"],
-    art: "/peep.svg",
-    accent: "from-emerald-500 to-teal-600",
-  },
-  {
-    index: "03",
-    title: "AI, put to work",
-    body: "I love the AI world, but I keep it practical: RAG systems, data extraction and processing pipelines that turn messy, unstructured data into real value.",
-    tags: ["RAG", "Data Extraction", "Pipelines", "LLMs"],
-    art: "/hero_peep.svg",
-    accent: "from-violet-500 to-fuchsia-600",
-  },
-  {
-    index: "04",
-    title: "Specialized models, on demand",
-    body: "When off-the-shelf models fall short, I build my own — fine-tuning specialized LLMs on curated datasets for domain-specific precision.",
-    tags: ["Fine-tuning", "Datasets", "Hugging Face"],
-    art: "/peep_alt.svg",
-    accent: "from-orange-500 to-pink-600",
-  },
-];
-
-const stats: { to?: number; suffix?: string; symbol?: string; label: string }[] =
-  [
-    { to: 360, suffix: "°", label: "End-to-end ownership" },
-    { to: 5, suffix: "+", label: "Languages I ship in" },
-    { to: 2023, label: "Building with AI since" },
-    { symbol: "∞", label: "Curiosity to learn" },
-  ];
-
-const headingWords = "Design. Build. Ship. Optimize.".split(" ");
+const EASE = [0.16, 1, 0.3, 1] as const;
 
 export default function Journey() {
-  const root = useRef<HTMLElement>(null);
+  const reduce = useReducedMotion();
+  const list = useRef<HTMLOListElement>(null);
+  const [active, setActive] = useState(0);
 
-  useGSAP(
-    () => {
-      const mm = gsap.matchMedia();
+  // Active principle: the last one whose top has passed the middle of the
+  // screen. Reads four rects per scroll frame; state only changes on a switch.
+  const { scrollY } = useScroll();
+  useMotionValueEvent(scrollY, "change", () => {
+    const items = list.current?.querySelectorAll<HTMLElement>("[data-principle]");
+    if (!items) return;
+    const line = window.innerHeight * 0.5;
+    let next = 0;
+    items.forEach((item, i) => {
+      if (item.getBoundingClientRect().top < line) next = i;
+    });
+    setActive((prev) => (prev === next ? prev : next));
+  });
 
-      // Full animation set — only for users who haven't asked for reduced motion.
-      mm.add("(prefers-reduced-motion: no-preference)", () => {
-        // Masked, word-by-word heading reveal.
-        gsap.from("[data-jrny-word]", {
-          yPercent: 120,
-          duration: 0.9,
-          ease: "power4.out",
-          stagger: 0.08,
-          scrollTrigger: { trigger: "[data-jrny-heading]", start: "top 82%" },
-        });
-
-        gsap.from("[data-jrny-intro]", {
-          y: 24,
-          opacity: 0,
-          duration: 0.8,
-          ease: "power3.out",
-          scrollTrigger: { trigger: "[data-jrny-heading]", start: "top 70%" },
-        });
-
-        // Per-chapter choreography.
-        gsap.utils.toArray<HTMLElement>("[data-chapter]").forEach((chapter) => {
-          const art = chapter.querySelector("[data-chapter-art]");
-          const blob = chapter.querySelector("[data-chapter-blob]");
-          const ghost = chapter.querySelector("[data-chapter-ghost]");
-          const reveals = chapter.querySelectorAll("[data-chapter-reveal]");
-          const line = chapter.querySelector("[data-chapter-line]");
-
-          // Entrance: illustration scales & fades in.
-          if (art) {
-            gsap.from(art, {
-              opacity: 0,
-              scale: 0.85,
-              y: 40,
-              duration: 1,
-              ease: "power3.out",
-              scrollTrigger: { trigger: chapter, start: "top 72%" },
-            });
-          }
-
-          // Text block reveals with a stagger.
-          gsap.from(reveals, {
-            y: 32,
-            opacity: 0,
-            duration: 0.8,
-            ease: "power3.out",
-            stagger: 0.12,
-            scrollTrigger: { trigger: chapter, start: "top 68%" },
-          });
-
-          // Vertical accent line draws itself.
-          if (line) {
-            gsap.from(line, {
-              scaleY: 0,
-              transformOrigin: "top center",
-              ease: "none",
-              scrollTrigger: {
-                trigger: chapter,
-                start: "top 75%",
-                end: "bottom 60%",
-                scrub: true,
-              },
-            });
-          }
-
-          // Parallax: illustration, glow and ghost number drift at their own pace.
-          gsap.to(art, {
-            yPercent: -14,
-            ease: "none",
-            scrollTrigger: {
-              trigger: chapter,
-              start: "top bottom",
-              end: "bottom top",
-              scrub: true,
-            },
-          });
-          gsap.to(blob, {
-            yPercent: 22,
-            ease: "none",
-            scrollTrigger: {
-              trigger: chapter,
-              start: "top bottom",
-              end: "bottom top",
-              scrub: true,
-            },
-          });
-          gsap.to(ghost, {
-            yPercent: -30,
-            ease: "none",
-            scrollTrigger: {
-              trigger: chapter,
-              start: "top bottom",
-              end: "bottom top",
-              scrub: true,
-            },
-          });
-        });
-
-        // Animated counters.
-        gsap.utils.toArray<HTMLElement>("[data-count]").forEach((el) => {
-          const to = Number(el.dataset.count);
-          const suffix = el.dataset.suffix ?? "";
-          const obj = { v: 0 };
-          ScrollTrigger.create({
-            trigger: el,
-            start: "top 88%",
-            once: true,
-            onEnter: () =>
-              gsap.to(obj, {
-                v: to,
-                duration: 1.6,
-                ease: "power2.out",
-                onUpdate: () => {
-                  el.textContent = Math.round(obj.v).toString() + suffix;
-                },
-              }),
-          });
-        });
-
-        gsap.from("[data-stat]", {
-          y: 30,
-          opacity: 0,
-          duration: 0.7,
-          ease: "power3.out",
-          stagger: 0.1,
-          scrollTrigger: { trigger: "[data-jrny-stats]", start: "top 82%" },
-        });
-
-        // Closing call to action.
-        gsap.from("[data-jrny-cta] > *", {
-          y: 28,
-          opacity: 0,
-          duration: 0.8,
-          ease: "power3.out",
-          stagger: 0.15,
-          scrollTrigger: { trigger: "[data-jrny-cta]", start: "top 85%" },
-        });
-      });
-
-      return () => mm.revert();
-    },
-    { scope: root }
-  );
+  // Progress line that fills as the list is read.
+  const { scrollYProgress } = useScroll({ target: list, offset: ["start 55%", "end 55%"] });
+  const progress = useSpring(scrollYProgress, { stiffness: 120, damping: 30, restDelta: 0.001 });
 
   return (
-    <section
-      ref={root}
-      id="journey"
-      className="relative overflow-hidden py-20 sm:py-28 lg:py-36"
-    >
-      <div className="mx-auto w-[90%] max-w-7xl md:w-[80%]">
-        {/* Intro */}
-        <div data-jrny-heading className="mb-20 sm:mb-28 lg:mb-36">
-          <p
-            data-jrny-intro
-            className="mb-4 font-mono text-sm uppercase tracking-[0.2em] text-muted-foreground"
-          >
-            How I work
-          </p>
-          <h2 className="max-w-4xl text-4xl font-bold tracking-tight sm:text-5xl lg:text-7xl">
-            {headingWords.map((word, i) => (
-              <span
-                key={i}
-                className="mr-[0.25em] inline-block overflow-hidden pb-[0.1em] align-bottom"
-              >
-                <span data-jrny-word className="inline-block">
-                  {word}
-                </span>
-              </span>
-            ))}
-          </h2>
-          <p
-            data-jrny-intro
-            className="mt-6 max-w-2xl text-lg text-muted-foreground sm:text-xl"
-          >
-            Versatile by nature — I design, build and optimize software end to
-            end, and reach for AI, pipelines and fine-tuned models whenever a
-            problem calls for it.
-          </p>
-        </div>
-
-        {/* Chapters */}
-        <div className="space-y-28 sm:space-y-36 lg:space-y-48">
-          {chapters.map((chapter, i) => {
-            const reversed = i % 2 === 1;
-            return (
-              <div
-                key={chapter.index}
-                data-chapter
-                className={cn(
-                  "flex flex-col gap-10 lg:items-center lg:gap-20",
-                  reversed ? "lg:flex-row-reverse" : "lg:flex-row"
-                )}
-              >
-                {/* Illustration */}
-                <div className="relative flex w-full justify-center lg:w-1/2">
-                  <div
-                    data-chapter-blob
-                    className={cn(
-                      "pointer-events-none absolute top-1/2 left-1/2 aspect-square w-3/4 -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-br opacity-40 blur-3xl",
-                      chapter.accent
-                    )}
-                  />
-                  <span
-                    data-chapter-ghost
-                    aria-hidden="true"
-                    className="pointer-events-none absolute -top-10 select-none text-[9rem] font-black leading-none text-foreground/[0.04] sm:text-[12rem] lg:-top-16 lg:text-[16rem]"
-                  >
-                    {chapter.index}
-                  </span>
-                  <img
-                    data-chapter-art
-                    src={chapter.art}
-                    alt=""
-                    aria-hidden="true"
-                    className="relative z-10 w-2/3 max-w-sm drop-shadow-xl sm:w-1/2 lg:w-3/4"
-                  />
-                </div>
-
-                {/* Text */}
-                <div className="relative flex w-full gap-5 lg:w-1/2">
-                  <div
-                    data-chapter-line
-                    className={cn(
-                      "mt-2 hidden w-[3px] shrink-0 rounded-full bg-gradient-to-b sm:block",
-                      chapter.accent
-                    )}
-                  />
-                  <div className="space-y-5">
-                    <span
-                      data-chapter-reveal
-                      className="inline-block font-mono text-sm font-medium text-muted-foreground"
-                    >
-                      Chapter {chapter.index}
-                    </span>
-                    <h3
-                      data-chapter-reveal
-                      className="text-2xl font-semibold tracking-tight sm:text-3xl lg:text-4xl"
-                    >
-                      {chapter.title}
-                    </h3>
-                    <p
-                      data-chapter-reveal
-                      className="max-w-xl text-lg text-muted-foreground text-pretty"
-                    >
-                      {chapter.body}
-                    </p>
-                    <div
-                      data-chapter-reveal
-                      className="flex flex-wrap gap-2 pt-1"
-                    >
-                      {chapter.tags.map((tag) => (
-                        <Badge key={tag} variant="secondary">
-                          {tag}
-                        </Badge>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            );
-          })}
-        </div>
-
-        {/* Stats */}
-        <div
-          data-jrny-stats
-          className="mt-28 grid grid-cols-2 gap-8 border-t pt-16 sm:mt-36 lg:grid-cols-4 lg:gap-6"
-        >
-          {stats.map((stat, i) => (
-            <div key={i} data-stat className="space-y-2">
-              <div className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
-                {stat.symbol ? (
-                  stat.symbol
-                ) : (
-                  <span data-count={stat.to} data-suffix={stat.suffix ?? ""}>
-                    0
-                  </span>
-                )}
-              </div>
-              <p className="text-sm text-muted-foreground sm:text-base">
-                {stat.label}
+    <section id="journey" className="scroll-mt-20 py-24 md:py-32">
+      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-14 px-5 md:px-8 lg:grid-cols-12 lg:gap-8">
+        {/* Sticky rail on desktop with the peep for the active principle; stacked intro below lg. */}
+        <div className="lg:col-span-5">
+          <div className="lg:sticky lg:top-24">
+            <AnimatedHeading text="How I work" className="text-5xl font-semibold tracking-[-0.04em] md:text-7xl" />
+            <Reveal delay={0.15}>
+              <p className="mt-6 max-w-[40ch] text-lg leading-relaxed text-muted-foreground">
+                I design, build and optimize software end to end, and reach for AI when a problem
+                calls for it. I studied Information Technology at the University of Milano-Bicocca.
               </p>
+            </Reveal>
+
+            <div
+              aria-hidden="true"
+              className="relative mt-10 hidden aspect-[5/4] max-w-sm overflow-hidden rounded-xl bg-panel lg:block"
+            >
+              <AnimatePresence initial={false} mode="popLayout">
+                <motion.img
+                  key={PRINCIPLES[active].art}
+                  src={PRINCIPLES[active].art}
+                  alt=""
+                  initial={{ opacity: 0, y: 60, rotate: -3 }}
+                  animate={{ opacity: 1, y: 0, rotate: 0 }}
+                  exit={{ opacity: 0, y: -30, rotate: 3 }}
+                  transition={{ duration: 0.7, ease: EASE }}
+                  className="absolute bottom-0 left-1/2 w-[88%] -translate-x-1/2"
+                />
+              </AnimatePresence>
             </div>
-          ))}
+          </div>
         </div>
 
-        {/* CTA */}
-        <div
-          data-jrny-cta
-          className="mt-28 flex flex-col items-start gap-6 sm:mt-36"
-        >
-          <h3 className="max-w-2xl text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
-            Let&apos;s build something exceptional together.
-          </h3>
-          <Magnetic>
-            <a href={SOCIALS.linkedin} target="_blank" rel="noopener noreferrer">
-              <Button size="lg" className="cursor-pointer font-normal">
-                Get in touch <ArrowUpRightIcon />
-              </Button>
-            </a>
-          </Magnetic>
+        <div className="relative pl-10 md:pl-14 lg:col-span-6 lg:col-start-7 lg:pt-3">
+          {/* Track and fill. */}
+          <span aria-hidden="true" className="absolute top-3 bottom-3 left-[7px] w-px bg-line" />
+          <motion.span
+            aria-hidden="true"
+            style={{ scaleY: reduce ? 1 : progress }}
+            className="absolute top-3 bottom-3 left-[6px] w-[3px] origin-top bg-signal"
+          />
+
+          <ol ref={list} className="space-y-16 lg:space-y-28">
+            {PRINCIPLES.map((principle, i) => {
+              const isActive = active === i;
+              return (
+                <li key={principle.id} id={principle.id} data-principle={i} className="relative scroll-mt-28">
+                  {/* State marker: fills when this principle is the active one. */}
+                  <motion.span
+                    aria-hidden="true"
+                    animate={{ scale: isActive ? 1 : 0.6 }}
+                    transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                    className={cn(
+                      "absolute top-2.5 -left-10 size-[15px] rounded-full border-2 transition-colors duration-500 md:-left-14",
+                      isActive ? "border-signal bg-signal" : "border-line bg-background"
+                    )}
+                  />
+                  <Reveal>
+                    <h3
+                      className={cn(
+                        "text-3xl font-semibold tracking-[-0.03em] transition-colors duration-500 md:text-4xl",
+                        isActive ? "text-foreground" : "text-muted-foreground"
+                      )}
+                    >
+                      {principle.title}
+                    </h3>
+                    <p className="mt-4 max-w-[48ch] text-lg leading-relaxed text-muted-foreground md:text-xl">
+                      {principle.body}
+                    </p>
+                    <ul className="mt-6 flex flex-wrap gap-x-4 gap-y-1 font-mono text-sm text-muted-foreground">
+                      {principle.tags.map((tag) => (
+                        <li key={tag}>{tag}</li>
+                      ))}
+                    </ul>
+                  </Reveal>
+                </li>
+              );
+            })}
+          </ol>
         </div>
       </div>
     </section>

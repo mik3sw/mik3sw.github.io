@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const ogSize = { width: 1200, height: 630 };
-export const ogAlt = "Michele Angelo Marcucci — AI Software Engineer";
+export const ogAlt = "Michele Angelo Marcucci | AI Software Engineer";
 export const ogContentType = "image/png";
 
 // Shared 1200×630 social preview, rendered to a static PNG at build time.
@@ -16,11 +16,9 @@ export function renderOgImage() {
           flexDirection: "column",
           justifyContent: "space-between",
           padding: "72px 84px",
-          backgroundColor: "#0a0a0f",
+          backgroundColor: "#16171b",
           color: "#ffffff",
           fontFamily: "sans-serif",
-          backgroundImage:
-            "radial-gradient(1100px circle at 12% 8%, rgba(236,72,153,0.38), transparent 42%), radial-gradient(1100px circle at 92% 94%, rgba(139,92,246,0.42), transparent 42%)",
         }}
       >
         <div
@@ -29,7 +27,7 @@ export function renderOgImage() {
             alignItems: "center",
             fontSize: 26,
             letterSpacing: 6,
-            color: "#a1a1aa",
+            color: "#6f8bff",
           }}
         >
           AI SOFTWARE ENGINEER
@@ -55,7 +53,7 @@ export function renderOgImage() {
               color: "#d4d4d8",
             }}
           >
-            Full-stack software · AI pipelines · RAG · Fine-tuning
+            Full-stack software, AI pipelines, RAG and fine-tuning
           </div>
         </div>
 

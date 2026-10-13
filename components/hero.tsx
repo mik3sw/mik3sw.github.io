@@ -1,155 +1,70 @@
-"use client";
+import type { CSSProperties } from "react";
+import { ArrowDown } from "@phosphor-icons/react/dist/ssr";
+import { COMPANY_INFO, HERO_ROLES } from "@/lib/config/constants";
+import { HeroArt } from "./hero-art";
+import { Magnetic } from "./motion/magnetic";
+import { RotatingWord } from "./motion/rotating-word";
 
-import { motion, Variants } from "framer-motion";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useGSAP } from "@gsap/react";
-import { Button } from "@/components/ui/button";
-import { COMPANY_INFO, SOCIALS } from "@/lib/config/constants";
-import { ArrowUpRightIcon, SquareTerminal } from "lucide-react";
-import { Status, StatusIndicator, StatusLabel } from '@/components/ui/shadcn-io/status';
-import { Magnetic } from "./ui/shadcn-io/magnetic";
-import { useRef, useState } from "react";
+const step = (i: number) => ({ "--i": i }) as CSSProperties;
 
-gsap.registerPlugin(ScrollTrigger, useGSAP);
-
+/*
+  Copy entry motion is plain CSS (.hero-rise in globals.css) so it starts with
+  first paint instead of waiting for hydration. The art is a client island.
+*/
 export default function Hero() {
-
-  const [hover, setHover] = useState(false)
-  const heroRef = useRef<HTMLDivElement>(null);
-
-  useGSAP(
-    () => {
-      // Parallax: blob and illustration drift at different speeds on scroll.
-      gsap.to("[data-hero-blob]", {
-        yPercent: 30,
-        ease: "none",
-        scrollTrigger: {
-          trigger: heroRef.current,
-          start: "top top",
-          end: "bottom top",
-          scrub: true,
-        },
-      });
-      gsap.to("[data-hero-art]", {
-        yPercent: -12,
-        ease: "none",
-        scrollTrigger: {
-          trigger: heroRef.current,
-          start: "top top",
-          end: "bottom top",
-          scrub: true,
-        },
-      });
-    },
-    { scope: heroRef }
-  );
-  // ✅ Tip explicito
-  const container: Variants = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.15,
-      },
-    },
-  };
-
-  const item: Variants = {
-    hidden: { opacity: 0, x: -40 },
-    show: {
-      opacity: 1,
-      x: 0,
-      transition: { duration: 0.6, ease: "easeOut" },
-    },
-  };
-
   return (
-    <div ref={heroRef}>
-      <div className="w-full h-screen flex flex-col items-center">
-        <motion.div
-          className="md:w-[80%] lg:w-[80%] w-[90%] flex justify-center items-center h-screen gap-7 max-w-7xl"
-          variants={container}
-          initial="hidden"
-          animate="show"
-        >
-          <div className="flex-1 flex flex-col justify-center gap-7">
-            
-            <motion.div
-              variants={item}
-              className="rounded-md border px-4 py-2 font-mono text-sm w-fit flex items-center gap-2"
-            >
-              {/* <UserIcon /> */}
-              <SquareTerminal />
-              <div>Writing code</div>
-              <Status status="online">
-                <StatusIndicator />
-                <StatusLabel />
-              </Status>
-            </motion.div>
+    <section
+      id="top"
+      className="mx-auto flex min-h-[100dvh] max-w-7xl items-center overflow-x-clip px-5 pt-24 pb-16 md:px-8"
+    >
+      <div className="grid w-full grid-cols-1 items-center gap-16 md:grid-cols-12 md:gap-8">
+        <div className="md:col-span-7">
+          <p className="hero-rise text-lg text-muted-foreground md:text-xl" style={step(0)}>
+            {COMPANY_INFO.greeting}
+          </p>
 
-            <div>
-              <motion.h1
-                variants={item}
-                className="scroll-m-10 md:text-6xl lg:text-6xl text-5xl font-bold tracking-tight text-balance max-w-3xl"
+          <h1
+            className="hero-rise mt-4 text-6xl leading-[0.95] font-semibold tracking-[-0.045em] text-balance md:text-7xl lg:text-[6.25rem]"
+            style={step(1)}
+          >
+            AI Software <span className="text-signal">Engineer.</span>
+          </h1>
+
+          <p
+            className="hero-rise mt-7 max-w-[40ch] text-lg leading-relaxed text-muted-foreground md:text-xl"
+            style={step(2)}
+          >
+            {COMPANY_INFO.lead} <RotatingWord words={HERO_ROLES} />
+          </p>
+
+          <div className="hero-rise mt-10 flex flex-wrap items-center gap-3" style={step(3)}>
+            <Magnetic>
+              <a
+                href="#contact"
+                className="inline-flex h-12 items-center rounded-full bg-foreground px-7 text-base font-medium text-background transition-transform active:scale-[0.98]"
               >
-                {COMPANY_INFO.title1}
-              </motion.h1>
-              <motion.h1
-                variants={item}
-                className="scroll-m-10 md:text-6xl lg:text-6xl text-5xl font-bold tracking-tight text-balance max-w-3xl"
+                Contact me
+              </a>
+            </Magnetic>
+            <Magnetic strength={0.2}>
+              <a
+                href="#projects"
+                className="group inline-flex h-12 items-center gap-2 rounded-full border border-line px-6 text-base font-medium transition-colors hover:border-foreground/40 active:scale-[0.98]"
               >
-                {COMPANY_INFO.title2}
-              </motion.h1>
-            </div>
-           
-
-            <motion.span
-              variants={item}
-              className="scroll-m-10 text-xl font-normal tracking-tight text-balance text-muted-foreground max-w-2xl"
-            >
-              {COMPANY_INFO.subtitle}
-            </motion.span>
-
-            <motion.div variants={item}>
-              <Magnetic>
-                <a href={SOCIALS.linkedin} target="_blank" rel="noopener noreferrer">
-                <Button className="w-fit text-center font-normal cursor-pointer" size="lg">
-                  Contact Me <ArrowUpRightIcon />
-                </Button>
-                </a>
-              </Magnetic>
-            </motion.div>
+                See projects
+                <ArrowDown className="size-4 transition-transform duration-300 group-hover:translate-y-0.5" />
+              </a>
+            </Magnetic>
           </div>
+        </div>
 
-
-        <motion.div
-          variants={item}
-          className="flex-1 rounded-2xl hidden md:flex overflow-hidden relative"
-          onHoverStart={() => setHover(true)}
-          onHoverEnd={() => setHover(false)}
-        >
-          {/* Cerchio sfumato di sfondo (parallax) */}
-          <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-            <div
-              data-hero-blob
-              className="w-2/4 aspect-square rounded-full bg-gradient-to-r from-pink-500 to-violet-500 blur-3xl"
-            />
-          </div>
-
-          {/* Illustrazione sopra lo sfondo (parallax) */}
-          <img
-            data-hero-art
-            src={hover ? "./hero_peep2_hover.svg" : "./hero_peep2.svg"}
-            alt="Illustration of Michele Marcucci working at a computer"
-            className="w-full h-full relative z-10 dark:shadow-lg dark:shadow-black/40 rounded-2xl"
-          />
-        </motion.div>
-      </motion.div>
-          
+        {/* Offset down from the headline so the two columns don't line up flat. */}
+        <figure className="md:col-span-5 md:col-start-8 md:mt-24">
+          <HeroArt />
+        </figure>
       </div>
-    </div>
+    </section>
   );
 }
 
-export { Hero }
+export { Hero };

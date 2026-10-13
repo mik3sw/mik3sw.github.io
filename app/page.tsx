@@ -1,17 +1,19 @@
 import Hero from "@/components/hero";
 import Projects from "@/components/projects";
+import Websites from "@/components/websites";
 import TechStack from "@/components/tech-stack";
 import Journey from "@/components/journey";
-// import About from "@/components/about"; // superseded by <Journey /> (kept for reference)
+import Contact from "@/components/contact";
 
 export default function Home() {
   return (
-    <div>
+    <main>
       <Hero />
       <Projects />
+      <Websites />
       <TechStack />
       <Journey />
-      {/* <About /> */}
-    </div>
+      <Contact />
+    </main>
   );
 }

@@ -1,21 +1,22 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { JetBrains_Mono, Schibsted_Grotesk } from "next/font/google";
 import "./globals.css";
-import { Navbar02 } from '@/components/ui/shadcn-io/navbar-02';
-import { ThemeProvider } from "@/components/theme-provider"
+import { ThemeProvider } from "@/components/theme-provider";
+import { MotionProvider } from "@/components/motion-provider";
+import { SiteHeader } from "@/components/site-header";
 import Footer from "@/components/ui/footer-component";
 import { SOCIALS } from "@/lib/config/constants";
 
-
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const schibsted = Schibsted_Grotesk({
+  variable: "--font-schibsted",
   subsets: ["latin"],
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const jetbrains = JetBrains_Mono({
+  variable: "--font-jetbrains",
   subsets: ["latin"],
+  display: "swap",
 });
 
 const siteUrl = "https://mik3sw.github.io";
@@ -24,7 +25,7 @@ const description =
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: "Michele Angelo Marcucci — AI Software Engineer",
+  title: "Michele Angelo Marcucci | AI Software Engineer",
   description,
   keywords: [
     "Michele Angelo Marcucci",
@@ -38,7 +39,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: siteUrl,
-    title: "Michele Angelo Marcucci — AI Software Engineer",
+    title: "Michele Angelo Marcucci | AI Software Engineer",
     description,
     siteName: "Michele Angelo Marcucci",
     images: [
@@ -46,13 +47,13 @@ export const metadata: Metadata = {
         url: "/og.png",
         width: 1200,
         height: 630,
-        alt: "Michele Angelo Marcucci — AI Software Engineer",
+        alt: "Michele Angelo Marcucci | AI Software Engineer",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Michele Angelo Marcucci — AI Software Engineer",
+    title: "Michele Angelo Marcucci | AI Software Engineer",
     description,
     images: ["/og.png"],
   },
@@ -97,30 +98,23 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${schibsted.variable} ${jetbrains.variable} antialiased`}>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
         />
         <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
-        <div className="fixed left-0 right-0 z-50 flex">
-          <div className="relative w-full bg-background">
-            <Navbar02 className="bg-background"/>
-          </div>
-        </div>
-
-        <div>
-          {children}
-        </div>
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <MotionProvider>
+            <SiteHeader />
+            {children}
+            <Footer />
+          </MotionProvider>
         </ThemeProvider>
-        <Footer></Footer>
       </body>
     </html>
   );
